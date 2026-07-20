@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>那我自己叫 AI 做就好了？ — 陳冠名</title>
+<meta name="description" content="AI 確實會寫程式。但寫出程式碼跟交付一套能在公司裡跑三年的系統，中間差的是什麼？用幾個實際會踩到的坑說明。">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="AI創界">
+      <span class="bt"><b>AI創界</b><small>AI 自動化與系統開發</small></span>
+    </a>
+    <div class="links">
+      <a href="service-ai-kefu.html">AI 客服</a>
+      <a href="service-n8n.html">流程自動化</a>
+      <a href="service-form.html">資料系統</a>
+      <a href="service-quote.html">AI 報價</a>
+      <a href="why-not-diy.html" class="on">自己做？</a>
+      <a href="index.html#contact">聯絡</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero sub">
+  <div class="narrow">
+    <span class="eyebrow rv"><i></i>常被問到的問題</span>
+    <h1 class="rv">那我自己<em>叫 AI 做</em>就好了？</h1>
+    <p class="lede rv">AI 很行，這頁不會跟你說它不行。這頁講的是另一件事：寫出程式碼，跟交付一套能在你公司跑三年的系統，中間差在哪。</p>
+  </div>
+</div>
+
+<section class="blk">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">前提</span>
+      <h2>AI 真的會寫程式</h2>
+      <p>你請 AI 寫一個表單、一支爬蟲、一段串接 API 的程式，它多半寫得出來，品質也不差。我自己每天都在用它寫。</p>
+    </div>
+    <div class="callout rv">
+      問題不在「寫不寫得出來」。問題在於你拿到那段程式碼之後，<b>要怎麼判斷它對不對，以及它離一套能用的系統還有多遠。</b>
+    </div>
+  </div>
+</section>
+
+<section class="blk tint">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">差別一</span>
+      <h2>你不會問你不知道的事</h2>
+      <p>這是最實際的一點，跟技術無關。</p>
+    </div>
+    <p class="rv" style="margin-bottom:22px">假設你跟 AI 說「幫我做一個 LINE AI 客服」。這句話底下藏著至少十個決定，而 AI 不會主動幫你決定，因為它不知道你的生意怎麼跑：</p>
+    <ul class="plist">
+      <li class="rv"><span>知識庫從哪來？誰維護？價格改了誰去改？</span></li>
+      <li class="rv"><span>答不出來的時候要怎麼辦？硬答、說不知道、還是轉真人？轉給誰？</span></li>
+      <li class="rv"><span>要不要記住上一句？記多久？隔天客人再來，算同一段對話嗎？</span></li>
+      <li class="rv"><span>同時十個人在問，狀態會不會互相蓋掉？</span></li>
+      <li class="rv"><span>對話要不要留紀錄？留多久？誰能看？客人的個資怎麼處理？</span></li>
+      <li class="rv"><span>模型呼叫要花錢，用量爆掉的時候誰擋？上限設多少？</span></li>
+      <li class="rv"><span>客人傳一張你根本沒賣的東西的照片，機器人該說什麼？</span></li>
+    </ul>
+    <div class="callout rv" style="margin-top:24px">
+      這幾題，系統上線第一週就會全部撞到。<b>你在跟 AI 聊天的時候不會問，因為你不知道它們存在。</b>等你知道的時候，通常是客人已經遇到了。
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">差別二</span>
+      <h2>幾個沒踩過不會知道的坑</h2>
+      <p>以下每一項都是實際做過才會知道的東西，列出來讓你判斷這件事的份量。</p>
+    </div>
+    <ul class="plist">
+      <li class="rv"><span><b>LINE 的 webhook 有回應時限</b>你沒在時限內回應，LINE 會認定失敗並重送。如果程式是收到訊息後才慢慢處理，客人會收到兩三次一樣的回覆。正確做法是先回應、再非同步處理。</span></li>
+      <li class="rv"><span><b>語言模型偶爾會吐出壞掉的格式</b>九十九次都正常，第一百次少一個括號，整條流程就死了。要驗證格式、重試、準備備援路徑。這部分的程式碼通常比主流程還多。</span></li>
+      <li class="rv"><span><b>API 金鑰不能放在前端</b>放了，任何人打開開發者工具都拿得到，然後拿去用，帳單算你的。這種事出過就是幾萬塊起跳。</span></li>
+      <li class="rv"><span><b>同一個客人連傳三則訊息</b>三個處理程序同時在跑，各自寫入狀態，最後互相覆蓋，對話就錯亂了。要處理並行。</span></li>
+      <li class="rv"><span><b>你串接的服務會改版</b>沒有人會通知你。某天早上系統就是壞了，而且不會有錯誤訊息告訴你為什麼。要有監控，壞掉的時候你得先知道，而不是客人打電話來罵。</span></li>
+      <li class="rv"><span><b>資料結構第一版一定不夠用</b>三個月後你想加一個欄位，如果當初沒設計好，可能得把已經收進來的資料整批搬遷。這是設計階段五分鐘的決定，跟事後兩週的工作量之間的差別。</span></li>
+    </ul>
+    <div class="callout rv" style="margin-top:24px">
+      每一個坑，AI 都能幫你修——<b>前提是你知道自己踩到了</b>。而這些的共通點是：出事的時候不會有明確的錯誤訊息，只會有「怪怪的」。
+    </div>
+  </div>
+</section>
+
+<section class="blk tint">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">差別三</span>
+      <h2>程式碼只是其中一塊</h2>
+      <p>就算程式碼全部寫好了，系統還沒開始跑。</p>
+    </div>
+    <div class="two">
+      <div class="panel rv"><h3>部署與網域</h3><p>程式要放在哪台主機、怎麼上去、憑證怎麼弄、掛掉會不會自己重啟。</p></div>
+      <div class="panel rv"><h3>金鑰與權限</h3><p>各種服務的金鑰放哪、誰能看、外洩了怎麼換。</p></div>
+      <div class="panel rv"><h3>資料庫</h3><p>結構怎麼設計、要不要備份、備份有沒有真的能還原（很多人備份到掛掉那天才發現不能用）。</p></div>
+      <div class="panel rv"><h3>監控</h3><p>系統壞了誰知道、怎麼知道、去哪看紀錄查原因。</p></div>
+      <div class="panel rv"><h3>成本控制</h3><p>模型用量、主機費、第三方服務費，哪一項會突然暴衝、怎麼設上限。</p></div>
+      <div class="panel rv"><h3>交接文件</h3><p>之後要改的人（包含未來的你）看得懂這東西怎麼運作。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">差別四</span>
+      <h2>出事的時候</h2>
+    </div>
+    <p class="rv" style="margin-bottom:16px">系統上線之後一定會出事，這件事沒有例外。差別只在出事的時候發生什麼。</p>
+    <p class="rv" style="margin-bottom:16px">你自己做，出事的時候你要放下手邊的生意，回去跟 AI 一問一答地找原因。而你不熟這套系統的細節——它是三個月前的你跟 AI 一起寫的，中間的判斷你早就忘了。</p>
+    <p class="rv"><b>找人做，出事的時候有人負責，而且那個人記得當初為什麼這樣設計。</b>這是你真正在買的東西。</p>
+  </div>
+</section>
+
+<section class="blk tint">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">所以</span>
+      <h2>什麼情況下你真的該自己做</h2>
+      <p>不是每件事都該外包。</p>
+    </div>
+    <ul class="plist">
+      <li class="rv"><span><b>只有你自己用的小工具</b>整理一份檔案、跑一次性的統計、做個試算表。壞了頂多重跑一次，自己叫 AI 做完全合理。</span></li>
+      <li class="rv"><span><b>你想學，而且有時間</b>這是很好的理由，過程中你會學到很多。</span></li>
+      <li class="rv"><span><b>還在試水溫</b>不確定這個流程要不要長期用，先自己弄個粗糙版本驗證想法，比一開始就花錢做完整版聰明。</span></li>
+    </ul>
+    <div class="callout rv" style="margin-top:24px">
+      <b>該找人的是這種：</b>客人會直接用到、壞掉會影響生意、要跑好幾年、而且會一直有人在上面加東西。這種系統的成本不在做出來，在做出來之後的每一天。
+    </div>
+  </div>
+</section>
+
+<div class="contact-sec">
+  <div class="narrow">
+    <div class="contact-box rv">
+      <h2>不確定你的狀況算哪一種？</h2>
+      <p>寫給我，我會老實跟你說這件事你自己做就好，還是值得找人。真的適合自己做的，我會直接講。</p>
+      <div class="cta-pair">
+        <a class="cta-line" href="https://line.me/ti/p/~0989285996">加 LINE 聊聊</a>
+        <a class="cta" href="mailto:zxc02621948@gmail.com?subject=%E8%A9%A2%E5%95%8F">寄信給我</a>
+      </div>
+      <div class="links">
+        <a href="index.html">回首頁</a>
+        <a href="index.html#contact">看服務項目</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
+
+<script src="reveal.js"></script>
+</body>
+</html>

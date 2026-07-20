@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 報價 / 文件處理 — 陳冠名</title>
+<meta name="description" content="自由文字或文件進來，結構化資料出去。AI 判斷是什麼，程式決定數字多少，對不到的標記待確認，不編造價格。起價 NT$40,000。">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="AI創界">
+      <span class="bt"><b>AI創界</b><small>AI 自動化與系統開發</small></span>
+    </a>
+    <div class="links">
+      <a href="service-ai-kefu.html">AI 客服</a>
+      <a href="service-n8n.html">流程自動化</a>
+      <a href="service-form.html">資料系統</a>
+      <a href="service-quote.html" class="on">AI 報價</a>
+      <a href="why-not-diy.html">自己做？</a>
+      <a href="index.html#contact">聯絡</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero sub">
+  <div class="narrow">
+    <span class="eyebrow rv"><i></i>服務項目 04</span>
+    <h1 class="rv">AI 報價 / <em>文件處理</em></h1>
+    <span class="price-tag rv">起價 NT$40,000</span>
+    <p class="lede rv">有人用一段話描述需求，系統把它變成一張可以出去的報價單。數字全部來自你的目錄，模型只負責看懂那段話。</p>
+    <a class="cta rv" href="https://zxc02621948-sketch.github.io/ai-quote-demo/">打開 Demo 試打一段需求</a>
+  </div>
+</div>
+
+<section class="blk">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">核心做法</span>
+      <h2>AI 判斷「是什麼」，程式決定「多少錢」</h2>
+      <p>這是這類系統唯一重要的設計決定，也是我在每個案子裡都堅持的分工。</p>
+    </div>
+    <div class="two">
+      <div class="panel rv">
+        <h3>交給模型的部分</h3>
+        <p>讀懂一段自由文字，判斷裡面提到哪些品項、各多少數量、有沒有特殊條件。這是模型擅長的事，換個講法它也認得出來。</p>
+      </div>
+      <div class="panel rv">
+        <h3>交給程式的部分</h3>
+        <p>拿著品項去比對你的目錄，抓單價、算數量、加工時、加運費、算稅、套利潤。每一個數字都有出處，追得到是目錄裡的哪一筆。</p>
+      </div>
+    </div>
+    <div class="callout rv">
+      <b>為什麼要這樣拆：</b>如果讓模型自己報價，它會給你一個看起來很合理的數字，而且看起來合理的錯誤最難被發現。拆開之後，模型答錯只會是「品項認錯」，你一眼看得出來；價格則永遠是對的，因為它根本不是模型算的。目錄裡找不到的東西會被標成待確認，留給人處理，不會被塞一個估計值進去。
+    </div>
+  </div>
+</section>
+
+<section class="blk tint">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">適合的狀況</span>
+      <h2>如果你有這些困擾</h2>
+    </div>
+    <ul class="plist">
+      <li class="rv"><span><b>報價要人工翻目錄</b>業務或技師寫一段需求，行政人員得逐項查價、算稅、打成單子。一份報價要花掉半天。</span></li>
+      <li class="rv"><span><b>不同人報出來的價格不一樣</b>同樣的需求，看誰處理，最後金額可能差一截。折扣、工時、運費各憑經驗。</span></li>
+      <li class="rv"><span><b>收到的文件格式不固定</b>客戶傳來的規格書、需求單、詢價信每份長得都不一樣，要人讀完才知道要什麼。</span></li>
+      <li class="rv"><span><b>試過讓 AI 報價，但不敢用</b>它會編造出目錄裡根本沒有的品項跟價格，而且講得很有自信。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">案例</span>
+      <h2>瑞士水電工程的 AI 報價助手</h2>
+    </div>
+    <div class="case rv">
+      <div class="case-top">
+        <div>
+          <h3>技師用法文寫一段施工需求，系統輸出完整報價單</h3>
+          <div class="tags">法文自由文字 · 供應商目錄比對 · PDF 產出 · 自架 n8n API</div>
+        </div>
+        <span class="chip">海外客戶</span>
+      </div>
+      <div class="pair"><span class="k">問題</span><p class="v">技師到現場後用自由文字描述要做什麼，行政人員得逐項翻三家供應商的目錄查價，再算利潤、工時、車馬費跟稅，最後打成報價單給客戶。很花時間，也常出錯。</p></div>
+      <div class="pair"><span class="k">做法</span><p class="v">那段法文進來，由語言模型抽出品項與數量，接著交給程式碼比對供應商目錄計價。目錄裡找不到的項目標成「待確認」，不給估計值。最後輸出含利潤、工時費、車馬費與增值稅的結構化報價單，可轉 PDF。</p></div>
+      <div class="pair"><span class="k">結果</span><p class="v">報價過程可稽核，每個數字追得到來源，<b>沒有任何一個數字是模型自己想的</b>。整套跑在自架的 n8n 上，對外開放 API，前端網頁跨網域呼叫，實測過真實的施工需求。</p></div>
+      <div class="pair"><span class="k">延伸</span><p class="v">同一套架構也適用於：讀規格書自動產生報價、把詢價信自動整理成訂單草稿、從文件抽取資料填進系統。差別只在目錄與規則換成你的。</p></div>
+      <div class="demo-row">
+        <a class="dbtn" href="https://zxc02621948-sketch.github.io/ai-quote-demo/"><span>→</span> 打開繁中版 Demo（可自己打一段需求試）</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk tint">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">內容</span>
+      <h2>會做到什麼程度</h2>
+    </div>
+    <ul class="plist">
+      <li class="rv"><span><b>抽取邏輯</b>設計模型要從文字裡抓出哪些欄位，並驗證它回傳的格式，避免偶爾吐出奇怪的東西把流程弄壞。</span></li>
+      <li class="rv"><span><b>比對規則</b>把抽出來的品項對到你的目錄。同義詞、別名、規格變體這些要一起處理，這部分通常最花工夫。</span></li>
+      <li class="rv"><span><b>缺漏標記</b>對不到的項目集中列出來給人確認，而不是猜一個。這是整套系統敢拿去用的前提。</span></li>
+      <li class="rv"><span><b>計價規則</b>利潤、工時費、運費、稅率、折扣條件寫成程式邏輯，改規則的時候改一個地方就好。</span></li>
+      <li class="rv"><span><b>結果輸出</b>PDF 報價單、試算表、或回傳 API 給你現有的系統接。看你要接到哪。</span></li>
+    </ul>
+    <div class="callout rv">
+      <b>做不到的事我先講：</b>系統的準確度取決於你的目錄有多整齊。目錄本身品名混亂、同一個東西有五種寫法、價格散在不同檔案裡，那要先整理目錄，這部分可能需要另外估。我會在評估階段先看你的目錄，再給你實際的準確度預期，不會先講一個好聽的數字。
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">費用</span>
+      <h2>怎麼算錢</h2>
+    </div>
+    <ul class="plist">
+      <li class="rv"><span><b>起價 NT$40,000</b>含抽取邏輯、比對規則、缺漏標記、計價邏輯、一種輸出格式。</span></li>
+      <li class="rv"><span><b>會往上加的情況</b>目錄需要整理、品項數量龐大、計價規則複雜（分級折扣、專案價、多幣別）、要串進你現有的系統。</span></li>
+      <li class="rv"><span><b>建議先做可行性確認</b>我會拿你真實的目錄跟幾筆實際需求跑一遍，測出準確度再談正式開發。費用折抵開發款。</span></li>
+      <li class="rv"><span><b>API 費用另計</b>語言模型用量由你的帳號支付，依處理量計費。</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="contact-sec">
+  <div class="narrow">
+    <div class="contact-box rv">
+      <h2>你們現在怎麼報價？</h2>
+      <p>講一下從收到需求到報價單出去大概怎麼跑，還有你的目錄長什麼樣。細節我會問，你不用先整理好。我會先評估準確度做不做得起來，再談錢。</p>
+      <div class="cta-pair">
+        <a class="cta-line" href="https://line.me/ti/p/~0989285996">加 LINE 聊聊</a>
+        <a class="cta" href="mailto:zxc02621948@gmail.com?subject=AI%20%E5%A0%B1%E5%83%B9%E8%A9%A2%E5%95%8F">寄信給我</a>
+      </div>
+      <div class="links">
+        <a href="index.html">回首頁</a>
+        <a href="service-n8n.html">流程自動化</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
+
+<script src="reveal.js"></script>
+</body>
+</html>
