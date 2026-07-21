@@ -2,7 +2,7 @@ const io = new IntersectionObserver((es) => {
   es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   });
-}, { threshold: .01, rootMargin: '0px 0px 8% 0px' });
+}, { threshold: .01, rootMargin: '0px' });
 
 document.querySelectorAll('.rv').forEach((el, i) => {
   const startsInView = el.getBoundingClientRect().top < window.innerHeight;
@@ -58,6 +58,27 @@ if (caseChoices.length && casePanels.length) {
   const requested = location.hash.slice(1);
   selectCase(validTargets.has(requested) ? requested : caseChoices[0].dataset.caseTarget, Boolean(requested));
 }
+
+// 保留瀏覽器原本的捲動位置；需要時提供明確的回到頂端操作
+const toTop = document.createElement('button');
+toTop.type = 'button';
+toTop.className = 'to-top';
+toTop.setAttribute('aria-label', '回到頁面頂端');
+const toTopArrow = document.createElement('span');
+toTopArrow.textContent = '↑';
+const toTopLabel = document.createElement('small');
+toTopLabel.textContent = 'TOP';
+toTop.append(toTopArrow, toTopLabel);
+document.body.append(toTop);
+
+const syncToTop = () => toTop.classList.toggle('show', window.scrollY > Math.max(520, window.innerHeight * .7));
+window.addEventListener('scroll', syncToTop, { passive: true });
+syncToTop();
+
+toTop.addEventListener('click', () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
 
 // 站內連結用相對路徑，站外一律是完整網址 → 全部開新分頁
 document.querySelectorAll('a[href^="http"]').forEach(a => {

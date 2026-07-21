@@ -16,7 +16,7 @@ body{
 a{color:inherit}
 strong,b{color:var(--ink);font-weight:700}
 
-.rv{opacity:0;transform:translateY(16px);transition:opacity .53s cubic-bezier(.2,.7,.3,1),transform .53s cubic-bezier(.2,.7,.3,1)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.16,.75,.25,1),transform .55s cubic-bezier(.16,.75,.25,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.choice-diamond{animation:none!important}}
 
@@ -437,6 +437,14 @@ footer a:hover{color:var(--amber)}
   color:var(--amber-d);text-decoration:none;margin-bottom:22px}
 .back:hover{text-decoration:underline}
 
+.to-top{position:fixed;right:24px;bottom:24px;z-index:45;width:54px;height:54px;display:grid;place-content:center;gap:1px;
+  border:1px solid #3a4353;border-radius:14px;background:rgba(18,22,29,.94);color:var(--amber);cursor:pointer;
+  opacity:0;transform:translateY(12px);pointer-events:none;box-shadow:0 13px 34px rgba(0,0,0,.28);backdrop-filter:blur(10px);
+  transition:opacity .2s,transform .2s,border-color .2s,background .2s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}.to-top:hover{border-color:var(--amber);background:#1c222d}
+.to-top:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.to-top span{font-size:22px;line-height:.8;font-weight:700}
+.to-top small{color:#a7b0c0;font:800 8px/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.08em}
+
 /* Readability pass: body copy stays comfortably readable; only decorative metadata remains compact. */
 .nav .brand .bt b{font-size:16.5px}.nav .brand .bt small{font-size:12.5px}.nav .links a{font-size:15.5px}
 .eyebrow{font-size:14px}.hero .lede{font-size:clamp(17.5px,2vw,20px)}.hero .price-tag{font-size:16px}
@@ -472,6 +480,7 @@ footer{font-size:15px}
   .service-ui{min-height:310px;padding:16px;transform:none}
   .wood-case{min-height:0;background-position:34% center}
   .wood-case .case-content{width:100%;min-height:620px;padding:42px 24px;background:linear-gradient(90deg,rgba(10,12,16,.88),rgba(10,12,16,.72))}
+  .to-top{right:16px;bottom:max(16px,env(safe-area-inset-bottom));width:49px;height:49px;border-radius:12px}
 }
 
 @media(max-width:900px){
