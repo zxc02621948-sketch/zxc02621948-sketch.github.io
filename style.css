@@ -9,7 +9,7 @@ html{scroll-behavior:smooth}
 body{
   background:var(--cream) url("background-paper.jpg") center top/1600px auto repeat-y;color:var(--body);
   font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
-  font-size:16.5px; line-height:1.8; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  font-size:17.5px; line-height:1.8; -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
 .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
 .narrow{max-width:860px;margin:0 auto;padding:0 28px}
@@ -435,6 +435,28 @@ footer a:hover{color:var(--amber)}
 .back{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;
   color:var(--amber-d);text-decoration:none;margin-bottom:22px}
 .back:hover{text-decoration:underline}
+
+/* Readability pass: body copy stays comfortably readable; only decorative metadata remains compact. */
+.nav .brand .bt b{font-size:16.5px}.nav .brand .bt small{font-size:12.5px}.nav .links a{font-size:15.5px}
+.eyebrow{font-size:14px}.hero .lede{font-size:clamp(17.5px,2vw,20px)}.hero .price-tag{font-size:16px}
+.cta-sub{font-size:15px}.showcase-bar{font-size:12.5px}.showcase-body>span{font-size:12px}.showcase-body p{font-size:15px}
+.fit h3{font-size:15px}.fit-item{font-size:16px}.sec-num{font-size:14px}.sec-head p{font-size:17.5px}
+.svc .price{font-size:15px}.svc .price b{font-size:17px}.svc p,.services-section .svc[data-mark]>p{font-size:16.5px}.svc .more{font-size:15.5px}
+.callout{font-size:16.5px}.chip{font-size:13.5px}.tags{font-size:15px}.pair .k{font-size:13px}.pair .v{font-size:16.5px}.dbtn{font-size:15.5px}
+.case-media-meta span{font-size:12px}.case-media-meta b{font-size:17px}.visual-label{font-size:11.5px}
+.platform-brand-lockup small{font-size:9.5px}.platform-channel-list small{font-size:11px}.platform-channel-list span{font-size:13px}
+.selector-head span{font-size:11.5px}.selector-head p{font-size:15px}.choice-copy small{font-size:11px}.choice-copy b{font-size:14.5px}
+.plist li,.panel p,.why p,.step p{font-size:16.5px}.contact-sec .links a,.back{font-size:15.5px}
+.work-index-head p{font-size:15.5px}.work-mini small{font-size:11.5px}.work-mini b{font-size:17px}.work-mini span{font-size:14px}
+footer{font-size:15px}
+
+/* Text inside the service-page visual demos also gets one readable step larger. */
+.line-head>span{font-size:11px}.line-head>b{font-size:12.5px}.line-head b small{font-size:10px}.line-head em{font-size:12px}
+.chat-line{font-size:12.5px}.chat-status{font-size:11px}.canvas-head b{font-size:12px}.canvas-head span{font-size:10px}
+.flow-node small{font-size:10px}.flow-node b{font-size:13px}.flow-branches span{font-size:11px}.flow-status{font-size:10px}
+.form-head span{font-size:12px}.form-head b{font-size:11px}.form-label{font-size:11px}.form-ui>strong{font-size:16px}
+.form-options span,.form-next{font-size:12px}.receipt-head small{font-size:10px}.quote-input,.quote-row,.quote-row b,.quote-total{font-size:12px}
+.build-side small{font-size:10.5px}.build-side span{font-size:11px}.build-footer{font-size:11.5px}
 
 @media(max-width:640px){
   .hero{padding:74px 0 64px}
