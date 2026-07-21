@@ -69,7 +69,7 @@
       </div>
       <div class="panel rv">
         <h3>失敗會被你知道</h3>
-        <p>網路斷線、對方系統掛掉、資料格式不對，這些都會發生。流程會重試，重試還是失敗就發通知給你，不會默默死掉讓你三天後才發現。</p>
+        <p>網路斷線、對方系統沒回應、資料格式不對，這些都會發生。流程會重試，重試還是失敗就發通知給你，不會默默停掉讓你三天後才發現。</p>
       </div>
       <div class="panel rv">
         <h3>可以自架，資料留在你這</h3>
@@ -107,7 +107,7 @@
         <span class="chip live">● 運作中</span>
       </div>
       <div class="pair"><span class="k">內容</span><p class="v">把 n8n 流程包裝成一支對外的 API：網頁前端送出請求，流程接收後呼叫語言模型抽取資料，再用程式邏輯計算，最後把結構化結果回傳給網頁顯示。</p></div>
-      <div class="pair"><span class="k">為什麼</span><p class="v">這種做法讓自動化流程變成一個可以被任何系統呼叫的服務，而不是關在後台自己跑。要換前端、要多接一個系統，流程本身不用動。</p></div>
+      <div class="pair"><span class="k">為什麼</span><p class="v">這種做法讓自動化流程變成一個可以被任何系統呼叫的服務，不用關在後台自己跑。要換前端、要多接一個系統，流程本身都不用動。</p></div>
       <div class="demo-row">
         <a class="dbtn" href="service-quote.html"><span>→</span> 這套系統在做什麼</a>
       </div>
@@ -122,7 +122,7 @@
         <span class="chip">實際營運中</span>
       </div>
       <div class="pair"><span class="k">內容</span><p class="v">整套客服系統跑在 n8n 上：訊息進來、判斷客人在流程的哪一段、呼叫模型、驗證模型回傳的格式、失敗就走備援分支、信心不足就轉真人。多個客戶共用一套系統，各自的設定與知識庫分開。</p></div>
-      <div class="pair"><span class="k">重點</span><p class="v">每一次模型回傳都會經過格式驗證跟重試，避免它偶爾吐出奇怪的東西就把整個流程弄壞。做自動化最花工夫的通常是這些防呆，不是主流程。</p></div>
+      <div class="pair"><span class="k">重點</span><p class="v">每一次模型回傳都會經過格式驗證跟重試，避免它偶爾回一個格式不對的內容就把整條流程弄壞。做自動化最花工夫的通常是這些防呆，主流程反而單純。</p></div>
       <div class="demo-row">
         <a class="dbtn" href="service-ai-kefu.html"><span>→</span> AI 客服細節</a>
       </div>
