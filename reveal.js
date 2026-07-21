@@ -2,7 +2,7 @@ const io = new IntersectionObserver((es) => {
   es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   });
-}, { threshold: .01, rootMargin: '0px' });
+}, { threshold: .01, rootMargin: '0px 0px -6% 0px' });
 
 document.querySelectorAll('.rv').forEach((el, i) => {
   const startsInView = el.getBoundingClientRect().top < window.innerHeight;
