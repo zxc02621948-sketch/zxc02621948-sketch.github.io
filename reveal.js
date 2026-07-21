@@ -2,10 +2,11 @@ const io = new IntersectionObserver((es) => {
   es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   });
-}, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: .01, rootMargin: '0px 0px 18% 0px' });
 
 document.querySelectorAll('.rv').forEach((el, i) => {
-  el.style.transitionDelay = (Math.min(i, 6) * 55) + 'ms';
+  const startsInView = el.getBoundingClientRect().top < window.innerHeight;
+  el.style.transitionDelay = startsInView ? (Math.min(i, 4) * 40) + 'ms' : '0ms';
   io.observe(el);
 });
 

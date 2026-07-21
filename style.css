@@ -16,7 +16,7 @@ body{
 a{color:inherit}
 strong,b{color:var(--ink);font-weight:700}
 
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.2,.7,.3,1),transform .45s cubic-bezier(.2,.7,.3,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.choice-diamond{animation:none!important}}
 
