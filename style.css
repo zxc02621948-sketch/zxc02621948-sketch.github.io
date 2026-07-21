@@ -177,7 +177,9 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
 .svc[data-tone="blue"]{--card-accent:#5687df}.svc[data-tone="rose"]{--card-accent:#d96b7f}
 .svc[data-mark]::before{content:attr(data-mark);position:absolute;right:18px;top:181px;color:var(--card-accent);
   opacity:.075;font-size:52px;line-height:1;font-weight:900;letter-spacing:-.07em;pointer-events:none}
-.svc-media{display:block;height:168px;margin:-30px -28px 24px;overflow:hidden;border-bottom:1px solid var(--line);background:#ddd}
+.svc-media{position:relative;display:block;height:168px;margin:-30px -28px 24px;overflow:hidden;border-bottom:1px solid var(--line);background:#ddd}
+.svc-media::after{content:"";position:absolute;right:20px;bottom:17px;width:21px;height:21px;border:3px solid rgba(255,255,255,.9);
+  background:var(--card-accent);transform:rotate(45deg);box-shadow:0 5px 14px rgba(10,12,17,.28)}
 .svc-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
 .svc:hover .svc-media img{transform:scale(1.035)}
 .svc[data-tone="blue"] .svc-media img{object-position:center 43%}.svc[data-tone="rose"] .svc-media img{object-position:center 56%}
@@ -299,6 +301,24 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
 .case[id]{scroll-margin-top:86px}
 @keyframes diamondFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
 @keyframes caseReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* The portfolio is one continuous selection stage, not a dark widget dropped into a light page. */
+.cases-section{position:relative;overflow:hidden;color:#bec6d3;border-top-color:#303641!important;
+  background-image:linear-gradient(rgba(12,15,20,.9),rgba(12,15,20,.96)),url("background-charcoal.jpg")!important;
+  background-position:center!important;background-size:cover!important}
+.cases-section::before,.cases-section::after{content:"";position:absolute;display:block;border:1px solid rgba(242,166,59,.13);
+  transform:rotate(45deg);pointer-events:none}
+.cases-section::before{left:-260px;top:180px;width:440px;height:440px}
+.cases-section::after{right:-360px;bottom:150px;width:560px;height:560px;border-color:rgba(31,158,143,.12)}
+.cases-section>.wrap{position:relative;z-index:1}
+.cases-section .sec-head::before{background:linear-gradient(var(--amber),#755020)}
+.cases-section .sec-head h2{color:#fff}.cases-section .sec-head p{color:#8f99aa}.cases-section .sec-num{color:var(--amber)}
+.cases-section .sec-num::before{content:"";display:inline-block;width:8px;height:8px;margin:0 11px 1px 3px;border:1px solid currentColor;
+  transform:rotate(45deg)}
+.cases-section .case-select-shell{margin-bottom:0;padding:20px 0 40px;overflow:visible;border:0;border-radius:0;background:none;box-shadow:none}
+.cases-section .case-select-shell::after{right:0;bottom:2px;color:rgba(255,255,255,.025)}
+.cases-section .case-stage{position:relative;padding-top:30px;border-top:1px solid #303641}
+.cases-section .case{box-shadow:0 28px 70px rgba(0,0,0,.28)}
 
 /* generic list blocks */
 .plist{list-style:none;display:grid;gap:12px;counter-reset:item}
@@ -422,6 +442,7 @@ footer a:hover{color:var(--amber)}
 
 @media(max-width:560px){
   .case-select-shell{margin-left:-12px;margin-right:-12px;padding:28px 18px 32px;border-radius:18px}
+  .cases-section .case-select-shell{margin-left:0;margin-right:0;padding:18px 0 34px;border-radius:0}
   .selector-head{align-items:flex-start;flex-direction:column}.case-selector{display:flex;max-width:none;margin:0 -18px;padding:28px 24px 12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
   .case-selector::-webkit-scrollbar{display:none}.case-choice{flex:0 0 170px;scroll-snap-align:center}.case-choice:nth-child(even){margin-top:36px}
   .choice-diamond{width:122px;height:122px}.choice-diamond img{width:142%;height:142%}
