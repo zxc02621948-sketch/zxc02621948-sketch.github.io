@@ -144,46 +144,34 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">02 — 實際案例</span>
-        <h2>4 個作品，從正式營運到功能原型</h2>
-        <p>先看作品總覽，再往下查看負責範圍、解法與目前狀態。</p>
+        <h2>選擇案例，查看完整解法</h2>
+        <p>四個作品涵蓋正式營運、海外客戶、需求原型與自有產品；點選後查看負責範圍、做法與成果。</p>
     </div>
 
-    <div class="portfolio-grid rv" aria-label="作品總覽">
-      <a class="portfolio-card tone-amber" href="#case-fulijie">
-        <span class="portfolio-no">01 / 04</span>
-        <div class="portfolio-visual"><b>WEB</b><i>＋</i><b>AI</b></div>
-        <span class="portfolio-type">正式商業案例</span>
-        <h3>富立傑木作裝修</h3>
-        <p>品牌官網、內容、SEO、AI 諮詢與持續維運</p>
-        <span class="portfolio-link">查看案例 ↓</span>
-      </a>
-      <a class="portfolio-card tone-teal" href="#case-quote">
-        <span class="portfolio-no">02 / 04</span>
-        <div class="portfolio-visual"><b>TEXT</b><i>→</i><b>QUOTE</b></div>
-        <span class="portfolio-type">海外客戶專案</span>
-        <h3>AI 報價助手</h3>
-        <p>文字需求抽取、目錄比對與確定性計價</p>
-        <span class="portfolio-link">查看案例 ↓</span>
-      </a>
-      <a class="portfolio-card tone-blue" href="#case-survey">
-        <span class="portfolio-no">03 / 04</span>
-        <div class="portfolio-visual"><b>FORM</b><i>→</i><b>DATA</b></div>
-        <span class="portfolio-type">客戶需求原型</span>
-        <h3>引導式問卷系統</h3>
-        <p>條件題目、資料蒐集、管理與匯出</p>
-        <span class="portfolio-link">查看案例 ↓</span>
-      </a>
-      <a class="portfolio-card tone-rose" href="#case-aicreate">
-        <span class="portfolio-no">04 / 04</span>
-        <div class="portfolio-visual"><b>200+</b><i>API</i><b>LIVE</b></div>
-        <span class="portfolio-type">自有產品</span>
-        <h3>AI 創界</h3>
-        <p>獨立開發、正式上線並持續營運的內容平台</p>
-        <span class="portfolio-link">查看案例 ↓</span>
-      </a>
+    <div class="case-select-shell rv">
+      <div class="selector-head"><div><span>SELECT A PROJECT</span><h3>選擇一個案例</h3></div><p>點選角色卡，查看完整負責範圍與成果。</p></div>
+      <div class="case-selector" role="tablist" aria-label="選擇案例">
+        <button class="case-choice active" id="tab-case-fulijie" type="button" role="tab" aria-selected="true" aria-controls="case-fulijie" data-case-target="case-fulijie">
+          <span class="choice-diamond"><img src="case-fulijie.jpg" alt="" width="1200" height="630"></span>
+          <span class="choice-copy"><small>01 · 正式商業案例</small><b>富立傑木作裝修</b></span>
+        </button>
+        <button class="case-choice" id="tab-case-quote" type="button" role="tab" aria-selected="false" aria-controls="case-quote" data-case-target="case-quote" tabindex="-1">
+          <span class="choice-diamond"><img src="case-quote-editorial.jpg" alt="" width="900" height="1200"></span>
+          <span class="choice-copy"><small>02 · 海外客戶專案</small><b>AI 報價助手</b></span>
+        </button>
+        <button class="case-choice" id="tab-case-survey" type="button" role="tab" aria-selected="false" aria-controls="case-survey" data-case-target="case-survey" tabindex="-1">
+          <span class="choice-diamond"><img src="case-survey-editorial.jpg" alt="" width="900" height="1200"></span>
+          <span class="choice-copy"><small>03 · 客戶需求原型</small><b>引導式問卷系統</b></span>
+        </button>
+        <button class="case-choice" id="tab-case-aicreate" type="button" role="tab" aria-selected="false" aria-controls="case-aicreate" data-case-target="case-aicreate" tabindex="-1">
+          <span class="choice-diamond"><img src="case-platform-editorial.jpg" alt="" width="900" height="1200"></span>
+          <span class="choice-copy"><small>04 · 自有產品</small><b>AI 創界</b></span>
+        </button>
+      </div>
     </div>
 
-    <div class="case featured-case wood-case rv" id="case-fulijie">
+    <div class="case-stage">
+    <div class="case featured-case wood-case rv" id="case-fulijie" role="tabpanel" aria-labelledby="tab-case-fulijie" tabindex="0" data-case-panel>
       <div class="case-content">
         <div class="case-kicker"><span>01</span><b>FULL-SCOPE CASE</b></div>
         <div class="case-top">
@@ -204,7 +192,7 @@
       </div>
     </div>
 
-    <div class="case system-case quote-case rv" id="case-quote">
+    <div class="case system-case quote-case rv" id="case-quote" role="tabpanel" aria-labelledby="tab-case-quote" tabindex="0" data-case-panel>
       <div class="system-visual" aria-hidden="true">
         <span class="visual-label">02 · QUOTE ENGINE</span>
         <div class="quote-method"><span>需求整理</span><span>目錄比對</span><span>規則計價</span></div>
@@ -227,7 +215,7 @@
       </div>
     </div>
 
-    <div class="case system-case survey-case rv" id="case-survey">
+    <div class="case system-case survey-case rv" id="case-survey" role="tabpanel" aria-labelledby="tab-case-survey" tabindex="0" data-case-panel>
       <div class="system-visual" aria-hidden="true">
         <span class="visual-label">03 · GUIDED FORM</span>
         <div class="survey-method"><span>條件題目</span><span>分類保存</span><span>直接匯出</span></div>
@@ -249,7 +237,7 @@
       </div>
     </div>
 
-    <div class="case system-case platform-case rv" id="case-aicreate">
+    <div class="case system-case platform-case rv" id="case-aicreate" role="tabpanel" aria-labelledby="tab-case-aicreate" tabindex="0" data-case-panel>
       <div class="system-visual" aria-hidden="true">
         <span class="visual-label">04 · OWN PRODUCT</span>
         <div class="platform-stats"><span><b>200+</b>API</span><span><b>500+</b>程式檔案</span><span><b>LIVE</b>持續營運</span></div>
@@ -269,6 +257,7 @@
         <a class="dbtn" href="https://github.com/zxc02621948-sketch"><span>→</span> GitHub</a>
       </div>
       </div>
+    </div>
     </div>
   </div>
 </section>
