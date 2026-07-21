@@ -360,6 +360,14 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
 .plist li::before{content:counter(item,decimal-leading-zero);flex:0 0 30px;color:var(--amber-d);font:800 11px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;margin-top:5px}
 .plist li b{display:block;margin-bottom:2px}
 
+/* Direct, visible answers for searchers and answer engines. */
+.answer-section .sec-head{margin-bottom:34px}
+.answer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.answer-card{position:relative;overflow:hidden;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:12px;padding:25px 22px 23px}
+.answer-card::before{content:"Q";position:absolute;right:15px;top:9px;color:rgba(196,121,20,.09);font:900 44px/1 ui-monospace,SFMono-Regular,Consolas,monospace}
+.answer-card h3{position:relative;padding-right:18px;margin-bottom:11px;color:var(--ink);font-size:18px;line-height:1.45;font-weight:800;letter-spacing:-.01em}
+.answer-card p{font-size:15.5px;line-height:1.75;color:var(--body)}
+
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
 .panel{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff,#faf9f5);border:1px solid var(--line);border-radius:var(--r);padding:32px 26px 28px}
 .panel::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--amber),var(--teal))}
@@ -490,6 +498,7 @@ footer{font-size:15px}
   .nav .links::-webkit-scrollbar{display:none}
   .nav .links a{flex:0 0 auto;white-space:nowrap}
   .service-hero-layout{grid-template-columns:1fr;gap:42px;min-height:0}
+  .answer-grid{grid-template-columns:1fr}
   .service-ui{width:100%;max-width:560px}
   .hero-grid{grid-template-columns:1fr;gap:48px}
   .hero-showcase{max-width:540px;transform:none}
