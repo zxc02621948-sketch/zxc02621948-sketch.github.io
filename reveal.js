@@ -55,8 +55,23 @@ if (caseChoices.length && casePanels.length) {
     });
   });
 
-  const requested = location.hash.slice(1);
-  selectCase(validTargets.has(requested) ? requested : caseChoices[0].dataset.caseTarget, Boolean(requested));
+  const requestedCase = () => {
+    const requested = location.hash.slice(1);
+    return validTargets.has(requested) ? requested : null;
+  };
+
+  const syncCaseFromUrl = () => {
+    const target = requestedCase();
+    if (!target) return;
+
+    const activeTarget = caseChoices.find(choice => choice.classList.contains('active'))?.dataset.caseTarget;
+    if (target !== activeTarget) selectCase(target, false);
+  };
+
+  const requested = requestedCase();
+  selectCase(requested || caseChoices[0].dataset.caseTarget, Boolean(requested));
+  window.addEventListener('popstate', syncCaseFromUrl);
+  window.addEventListener('hashchange', syncCaseFromUrl);
 }
 
 // 保留瀏覽器原本的捲動位置；需要時提供明確的回到頂端操作
