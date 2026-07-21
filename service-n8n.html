@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>n8n 流程自動化 — 陳冠名</title>
-<meta name="description" content="把每天重複做的事交給系統。表單自動通知、資料自動同步、定時抓取整理、跨系統 API 串接。單一流程起價 NT$20,000。">
+<meta name="description" content="用 n8n 處理表單通知、資料同步、定期報表與系統串接，包含錯誤重試、失敗通知及交接文件。單一流程起價 NT$20,000。">
+<meta name="theme-color" content="#0d0f14">
+<link rel="canonical" href="https://zxc02621948-sketch.github.io/service-n8n.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="n8n 流程自動化｜AI創界">
+<meta property="og:description" content="處理表單通知、資料同步、定期報表與系統串接。單一流程起價 NT$20,000。">
+<meta property="og:url" content="https://zxc02621948-sketch.github.io/service-n8n.html">
+<meta property="og:image" content="https://zxc02621948-sketch.github.io/og-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="logo.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -28,11 +37,11 @@
 </nav>
 
 <div class="hero sub">
-  <div class="narrow">
+  <div class="narrow service-hero-layout" data-art="FLOW / 24·7">
     <span class="eyebrow rv"><i></i>服務項目 02</span>
     <h1 class="rv">n8n <em>流程自動化</em></h1>
     <span class="price-tag rv">單一流程起價 NT$20,000</span>
-    <p class="lede rv">你每天都要做一次的那件事，交給系統做。做好之後流程圖攤開來你自己看得懂，哪一步在做什麼一目瞭然。</p>
+    <p class="lede rv">表單送出後通知誰、資料要寫進哪裡、報表何時整理寄出，都可以照你原本的規則自動執行。流程出錯會先重試，仍未成功就通知你處理。</p>
     <a class="cta rv" href="index.html#contact">免費諮詢</a>
   </div>
 </div>
@@ -41,13 +50,13 @@
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">適合的狀況</span>
-      <h2>如果你有這些困擾</h2>
+      <h2>適合自動化的工作</h2>
     </div>
     <ul class="plist">
       <li class="rv"><span><b>同一份資料要在好幾個地方輸入</b>客戶填了表單，你要複製到試算表，再貼到記帳軟體，再開一封信通知同事。</span></li>
-      <li class="rv"><span><b>有事情發生了但沒人知道</b>訂單進來、表單送出、庫存低於安全量，都要有人記得去看才會發現。</span></li>
-      <li class="rv"><span><b>每週固定要整理一份東西</b>抓資料、篩選、算總數、做成報表、寄出去。步驟一樣，只是資料換了。</span></li>
-      <li class="rv"><span><b>兩套系統之間沒有橋</b>各自都好用，就是資料過不去，中間永遠卡一個人在手動搬。</span></li>
+      <li class="rv"><span><b>重要事件要靠人定期查看</b>訂單成立、表單送出或庫存低於安全量，都要有人登入系統才會發現。</span></li>
+      <li class="rv"><span><b>固定時間整理並寄送報表</b>每次都要抓資料、篩選、計算總數、製作報表再寄出，只有資料內容不同。</span></li>
+      <li class="rv"><span><b>不同系統的資料無法同步</b>工具各自能用，但中間仍要靠人複製、下載再上傳。</span></li>
     </ul>
   </div>
 </section>
@@ -56,37 +65,37 @@
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">內容</span>
-      <h2>會做到什麼程度</h2>
+      <h2>一條流程包含哪些內容</h2>
     </div>
     <div class="two">
       <div class="panel rv">
         <h3>流程設計</h3>
-        <p>先把你現在的做法拆解成步驟，找出哪幾步可以自動、哪幾步該留給人決定。不是每個環節都適合自動化，該留的我會說。</p>
+        <p>整理目前的操作步驟、資料來源與例外狀況，確認哪些可以自動執行，哪些仍需人工判斷。</p>
       </div>
       <div class="panel rv">
         <h3>API 與 Webhook 串接</h3>
-        <p>串接你在用的服務：Google Sheets、資料庫、LINE、Email、各種有開 API 的系統。沒有 API 的，看情況用其他方式接。</p>
+        <p>可串接 Google Sheets、資料庫、LINE、Email，以及提供 API 或 Webhook 的服務；沒有 API 的系統需另外評估。</p>
       </div>
       <div class="panel rv">
-        <h3>失敗會被你知道</h3>
-        <p>網路斷線、對方系統沒回應、資料格式不對，這些都會發生。流程會重試，重試還是失敗就發通知給你，不會默默停掉讓你三天後才發現。</p>
+        <h3>重試與失敗通知</h3>
+        <p>遇到連線中斷、對方系統未回應或資料格式錯誤時，流程會依設定重試；仍未成功則發送通知並保留紀錄。</p>
       </div>
       <div class="panel rv">
-        <h3>可以自架，資料留在你這</h3>
-        <p>n8n 可以架在你自己的主機上，資料不用經過第三方平台。我現在自己就是這樣跑的，也能幫你架。</p>
+        <h3>可部署在你的主機</h3>
+        <p>n8n 可部署在你管理的主機上，流程設定與執行紀錄由你掌握；串接外部服務時，資料仍會依該服務的方式傳輸。</p>
       </div>
       <div class="panel rv">
         <h3>流程文件</h3>
-        <p>每個流程做什麼、串了哪些服務、失敗的時候去哪看，都會寫成文件給你。人事異動的時候接手的人看得懂。</p>
+        <p>文件會記錄流程用途、串接服務、設定位置與錯誤紀錄查詢方式，方便日後維護與交接。</p>
       </div>
       <div class="panel rv">
-        <h3>加 AI 的部分</h3>
-        <p>需要理解自由文字的環節可以接語言模型，例如把客戶來信分類、從信裡抽出訂單資訊。但金額、庫存這類數字我會用程式算，不交給模型。</p>
+        <h3>需要理解文字時再加入 AI</h3>
+        <p>例如將客戶來信分類，或從信件中擷取訂單資訊。金額、庫存與稅額等數字則依資料和程式規則處理。</p>
       </div>
     </div>
 
     <div class="callout rv">
-      <b>做不到的事我先講：</b>如果對方系統完全封閉、沒有 API 也不能匯出檔案，那自動化就沒有施力點。這種情況我會在評估階段就告訴你，不會收了錢才說做不了。
+      <b>串接限制：</b>若系統沒有 API、Webhook 或檔案匯出功能，可能無法穩定自動化。我會在報價前先確認可用的串接方式。
     </div>
   </div>
 </section>
@@ -95,19 +104,19 @@
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">實績</span>
-      <h2>我自己在跑的東西</h2>
+      <h2>實際使用中的流程</h2>
     </div>
 
     <div class="case rv">
       <div class="case-top">
         <div>
-          <h3>自架 n8n 對外開放 API，前端網頁跨網域呼叫</h3>
+          <h3>讓報價網頁呼叫 n8n 完成資料處理</h3>
           <div class="tags">Webhook · CORS · 語言模型串接</div>
         </div>
         <span class="chip live">● 運作中</span>
       </div>
-      <div class="pair"><span class="k">內容</span><p class="v">把 n8n 流程包裝成一支對外的 API：網頁前端送出請求，流程接收後呼叫語言模型抽取資料，再用程式邏輯計算，最後把結構化結果回傳給網頁顯示。</p></div>
-      <div class="pair"><span class="k">為什麼</span><p class="v">這種做法讓自動化流程變成一個可以被任何系統呼叫的服務，不用關在後台自己跑。要換前端、要多接一個系統，流程本身都不用動。</p></div>
+      <div class="pair"><span class="k">內容</span><p class="v">網頁送出施工需求後，n8n 呼叫語言模型擷取品項，再由程式依目錄計價，最後將結果回傳給網頁顯示。</p></div>
+      <div class="pair"><span class="k">做法</span><p class="v">資料處理流程獨立提供 API，前端網頁可以另外更換，也能讓其他系統沿用同一套處理規則。</p></div>
       <div class="demo-row">
         <a class="dbtn" href="service-quote.html"><span>→</span> 這套系統在做什麼</a>
       </div>
@@ -116,13 +125,13 @@
     <div class="case rv">
       <div class="case-top">
         <div>
-          <h3>多租戶 AI 客服的自動化骨架</h3>
-          <div class="tags">狀態管理 · 防禦性解析 · 真人接手 · 多通道</div>
+          <h3>多客戶共用的 AI 客服流程</h3>
+          <div class="tags">狀態管理 · 格式驗證 · 真人接手 · 多通路</div>
         </div>
         <span class="chip">實際營運中</span>
       </div>
-      <div class="pair"><span class="k">內容</span><p class="v">整套客服系統跑在 n8n 上：訊息進來、判斷客人在流程的哪一段、呼叫模型、驗證模型回傳的格式、失敗就走備援分支、信心不足就轉真人。多個客戶共用一套系統，各自的設定與知識庫分開。</p></div>
-      <div class="pair"><span class="k">重點</span><p class="v">每一次模型回傳都會經過格式驗證跟重試，避免它偶爾回一個格式不對的內容就把整條流程弄壞。做自動化最花工夫的通常是這些防呆，主流程反而單純。</p></div>
+      <div class="pair"><span class="k">內容</span><p class="v">n8n 接收訊息、讀取對話狀態、呼叫模型並驗證回傳格式；處理失敗時走備援流程，無法確認答案時轉給真人。不同客戶的設定與知識庫分開保存。</p></div>
+      <div class="pair"><span class="k">重點</span><p class="v">模型輸出會先經過格式驗證，格式不符時自動重試；仍未成功則保留紀錄並改走備援流程，避免單次異常中斷整段客服流程。</p></div>
       <div class="demo-row">
         <a class="dbtn" href="service-ai-kefu.html"><span>→</span> AI 客服細節</a>
       </div>
@@ -134,13 +143,13 @@
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">費用</span>
-      <h2>怎麼算錢</h2>
+      <h2>費用怎麼計算</h2>
     </div>
     <ul class="plist">
-      <li class="rv"><span><b>單一流程起價 NT$20,000</b>含流程設計、串接、錯誤處理與通知、流程文件。適合「一件明確的事」，例如表單進來自動通知加寫入試算表。</span></li>
-      <li class="rv"><span><b>多個流程或整套串接</b>依範圍報價。流程之間會共用設定，通常一起做比分開做划算。</span></li>
-      <li class="rv"><span><b>主機費用另計</b>自架 n8n 需要一台主機，月費依規模大約幾百塊台幣。建議用你的名義申請，我協助設定，帳號留在你手上。</span></li>
-      <li class="rv"><span><b>維護 NT$5,000/月 起</b>串接的服務改版時跟著修、小幅調整、新增小功能。不綁約。</span></li>
+      <li class="rv"><span><b>單一流程起價 NT$20,000</b>含流程設計、串接、錯誤處理、通知與文件。例如表單送出後通知指定人員並寫入試算表。</span></li>
+      <li class="rv"><span><b>多個流程或整套串接</b>依數量、服務種類、資料轉換與錯誤處理方式估價；共用設定不會重複開發。</span></li>
+      <li class="rv"><span><b>主機費用另計</b>自架 n8n 需要主機，費用依執行頻率與資料量估算。建議用你的名義申請，我協助設定。</span></li>
+      <li class="rv"><span><b>上線後支援</b>驗收後提供 30 天保固，處理已約定功能的異常。保固期滿後可按次處理，或選擇 NT$2,000/月起的基本維護；需要主動監控與固定調整時數則另選代管方案。</span></li>
     </ul>
   </div>
 </section>
@@ -148,8 +157,8 @@
 <div class="contact-sec">
   <div class="narrow">
     <div class="contact-box rv">
-      <h2>哪件事你每天都要做一次？</h2>
-      <p>講給我聽就好，不用整理得很完整。我會問到夠清楚為止，然後告訴你哪幾步能自動化、大概多少錢。</p>
+      <h2>哪一段工作最常重複？</h2>
+      <p>說明目前的操作步驟、使用哪些工具，以及多久執行一次，我會先評估可自動化的範圍與大致費用。</p>
       <div class="cta-pair">
         <a class="cta-line" href="https://line.me/ti/p/~0989285996">加 LINE 聊聊</a>
         <a class="cta" href="mailto:zxc02621948@gmail.com?subject=%E6%B5%81%E7%A8%8B%E8%87%AA%E5%8B%95%E5%8C%96%E8%A9%A2%E5%95%8F">寄信給我</a>
