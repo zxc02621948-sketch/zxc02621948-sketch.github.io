@@ -254,6 +254,13 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
 .survey-preview span{padding:8px 10px;border-radius:6px;background:rgba(255,255,255,.07);font-size:11px}.survey-preview .done{border-left:3px solid var(--visual-tone)}
 .survey-preview i{position:absolute;right:12px;bottom:-22px;display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--visual-tone);color:#111827;font:900 12px/1 ui-monospace,SFMono-Regular,Consolas,monospace;font-style:normal}
 .platform-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:26px 0}.platform-stats span{padding:13px 10px;border:1px solid rgba(255,255,255,.13);border-radius:9px;background:rgba(13,15,20,.62);font-size:10px;color:#aeb7c7}.platform-stats span:last-child{grid-column:1/-1}.platform-stats b{display:block;color:#fff;font-size:22px;line-height:1.1;margin-bottom:4px}
+.survey-case .system-visual,.platform-case .system-visual{justify-content:flex-end}
+.survey-case .system-visual{background:url("case-survey-editorial.jpg") center/cover no-repeat}
+.platform-case .system-visual{background:url("case-platform-editorial.jpg") center/cover no-repeat}
+.survey-case .system-visual::before,.platform-case .system-visual::before{z-index:0;opacity:1;background:linear-gradient(180deg,rgba(8,10,13,.34) 0%,transparent 38%,rgba(8,10,13,.08) 55%,rgba(8,10,13,.92) 100%)}
+.survey-case .visual-label,.platform-case .visual-label{position:absolute;top:28px;left:26px;padding:6px 8px;border-radius:4px;background:rgba(10,12,15,.62);backdrop-filter:blur(5px);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.65)}
+.survey-method{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:15px}.survey-method span{padding:6px 9px;border:1px solid rgba(255,255,255,.32);border-radius:99px;background:rgba(10,12,15,.58);backdrop-filter:blur(5px);color:#fff;font-size:9px;font-weight:800}
+.platform-case .platform-stats{margin:0 0 15px}.platform-case .platform-stats span{background:rgba(10,12,15,.6);backdrop-filter:blur(5px)}
 
 .portfolio-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 24px}
 .portfolio-card{--tone:#d98b24;position:relative;display:flex;min-height:330px;flex-direction:column;padding:20px;
