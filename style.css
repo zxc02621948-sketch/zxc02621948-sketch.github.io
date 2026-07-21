@@ -167,6 +167,7 @@ section.blk:nth-of-type(even){background-position:center,center 72%}
 h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;letter-spacing:-.01em}
 
 /* service cards */
+.offer-flow{display:flex;flex-direction:column}.offer-flow .cases-section{order:1}.offer-flow .services-section{order:2}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
 .svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;
   position:relative;overflow:hidden;text-decoration:none;display:block;color:var(--body);
@@ -193,6 +194,19 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
 .svc .more{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
   font-size:14.5px;color:var(--amber-d);font-weight:700}
 .svc.wide{grid-column:1/-1;background:linear-gradient(180deg,#fff,#fcfbf8)}
+
+/* After the case proof, services become a compact buying menu instead of a second gallery. */
+.services-section .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.services-section .svc[data-mark]{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto auto 1fr auto;
+  column-gap:22px;padding:22px;min-height:224px}
+.services-section .svc[data-mark]::before{top:21px}
+.services-section .svc[data-mark]>.svc-media{grid-column:1;grid-row:1/5;width:112px;height:auto;min-height:178px;margin:0;border:0;border-radius:10px}
+.services-section .svc[data-mark]>h3,.services-section .svc[data-mark]>.price,.services-section .svc[data-mark]>p,
+.services-section .svc[data-mark]>.more{grid-column:2}
+.services-section .svc[data-mark]>.price{justify-self:start;margin-bottom:9px}
+.services-section .svc[data-mark]>p{font-size:14.5px;line-height:1.65}
+.services-section .svc[data-mark]>.more{margin-top:10px;padding-top:10px}
+.services-section .callout{margin-top:20px}
 
 .callout{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--teal);
   border-radius:0 10px 10px 0;padding:20px 24px;font-size:15.5px;color:var(--body)}
@@ -436,6 +450,7 @@ footer a:hover{color:var(--amber)}
   .system-case{grid-template-columns:1fr}
   .system-visual{min-height:320px}
   .case-media img{min-height:260px;max-height:330px}
+  .services-section .svc-grid{grid-template-columns:1fr}
   .work-index-head{align-items:flex-start;flex-direction:column}
   .work-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -446,6 +461,9 @@ footer a:hover{color:var(--amber)}
   .selector-head{align-items:flex-start;flex-direction:column}.case-selector{display:flex;max-width:none;margin:0 -18px;padding:28px 24px 12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
   .case-selector::-webkit-scrollbar{display:none}.case-choice{flex:0 0 170px;scroll-snap-align:center}.case-choice:nth-child(even){margin-top:36px}
   .choice-diamond{width:122px;height:122px}.choice-diamond img{width:142%;height:142%}
+  .services-section .svc[data-mark]{grid-template-columns:88px minmax(0,1fr);column-gap:16px;padding:17px;min-height:218px}
+  .services-section .svc[data-mark]>.svc-media{width:88px;min-height:180px}
+  .services-section .svc[data-mark]>.svc-media::after{right:13px;bottom:14px;width:16px;height:16px}
   .work-mini-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
   .work-mini{flex:0 0 82%;scroll-snap-align:start}
   .build-ui{grid-template-columns:1fr;gap:0}
