@@ -176,8 +176,12 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
   transform:scaleY(0);transform-origin:top;transition:transform .3s}
 .svc[data-tone="amber"]{--card-accent:#f2a63b}.svc[data-tone="teal"]{--card-accent:#1f9e8f}
 .svc[data-tone="blue"]{--card-accent:#5687df}.svc[data-tone="rose"]{--card-accent:#d96b7f}
-.svc[data-mark]::before{content:attr(data-mark);position:absolute;right:18px;top:4px;color:var(--card-accent);
+.svc[data-mark]::before{content:attr(data-mark);position:absolute;right:18px;top:181px;color:var(--card-accent);
   opacity:.075;font-size:52px;line-height:1;font-weight:900;letter-spacing:-.07em;pointer-events:none}
+.svc-media{display:block;height:168px;margin:-30px -28px 24px;overflow:hidden;border-bottom:1px solid var(--line);background:#ddd}
+.svc-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
+.svc:hover .svc-media img{transform:scale(1.035)}
+.svc[data-tone="blue"] .svc-media img{object-position:center 43%}.svc[data-tone="rose"] .svc-media img{object-position:center 56%}
 .svc:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(13,15,20,.11);border-color:#d9d4c8}
 .svc:hover::after{transform:scaleY(1)}
 .svc h3{font-size:20px;color:var(--ink);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
@@ -194,6 +198,9 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
 
 /* cases */
 .case{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;margin-bottom:22px}
+.case-banner{height:230px;margin:-34px -32px 30px;overflow:hidden;border-radius:var(--r) var(--r) 0 0;border-bottom:1px solid var(--line);background:#ddd}
+.case-banner img{width:100%;height:100%;display:block;object-fit:cover}.case-banner img[src*="case-fulijie"]{object-position:center 48%}
+.case-banner img[src*="case-survey"],.case-banner img[src*="case-quote"]{object-position:center 53%}
 .case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:22px}
 .case h3{font-size:22px;color:var(--ink);font-weight:800;letter-spacing:-.015em;line-height:1.35}
 .chip{font-size:12.5px;font-weight:700;letter-spacing:.03em;white-space:nowrap;
@@ -373,6 +380,7 @@ footer a:hover{color:var(--amber)}
   section.blk,.why-sec,.contact-sec{padding:64px 0}
   .contact-box{padding:38px 24px}
   .case{padding:26px 22px}
+  .case-banner{height:190px;margin:-26px -22px 24px}
   .pair{flex-direction:column;gap:4px}
   .pair .k{flex:none;display:inline-block;padding:3px 10px}
   .step{padding-left:48px}
