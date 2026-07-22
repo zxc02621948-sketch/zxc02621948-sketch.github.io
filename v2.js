@@ -18,9 +18,12 @@ const serviceData = {
     input: '產品資料、FAQ、客戶提問',
     output: '有邊界的自動回覆流程',
     option: 'AI 客服',
-    proofLink: 'https://service.aicreateaworld.com/ai-kefu-playground/',
-    proofLabel: '直接試用 AI 客服',
-    detailLink: 'service-ai-kefu.html'
+    proofLink: 'https://lin.ee/RNYMLFM',
+    proofLabel: '加入 LINE 測試版 Demo',
+    demoLink: 'https://service.aicreateaworld.com/ai-kefu-playground/',
+    demoLabel: '開啟網頁版 Demo',
+    detailLink: 'service-ai-kefu.html',
+    proofNote: 'LINE 與網頁 Demo 均為獨立測試環境，非富立傑官方帳號。'
   },
   flow: {
     code: 'ROUTE_03 / WORKFLOW AUTOMATION',
@@ -62,7 +65,7 @@ const serviceData = {
 const projectData = {
   fulijie: {
     number: '01', tag: '正式營運案例 · WEBSITE + AI', title: '富立傑木作裝修',
-    text: '從品牌官網、內容整理到 LINE 與網頁 AI 諮詢流程獨立完成；目前持續服務實際客戶並負責上線後維運。',
+    text: '從品牌官網、內容整理到網頁 AI 諮詢流程獨立完成；目前持續服務實際客戶並負責上線後維運。',
     meta: ['品牌官網','SEO','AI 客服','維運'], link: 'https://www.fullyjet.com/', label: '查看正式網站'
   },
   quote: {
@@ -89,7 +92,9 @@ const consoleFields = {
   input: document.querySelector('#serviceInput'), output: document.querySelector('#serviceOutput')
 };
 const serviceProofLink = document.querySelector('#serviceProofLink');
+const serviceDemoLink = document.querySelector('#serviceDemoLink');
 const serviceDetailLink = document.querySelector('#serviceDetailLink');
+const serviceProofNote = document.querySelector('#serviceProofNote');
 let currentService = 'web';
 
 function selectService(key) {
@@ -104,8 +109,15 @@ function selectService(key) {
   Object.keys(consoleFields).forEach(field => { consoleFields[field].textContent = data[field]; });
   serviceProofLink.href = data.proofLink;
   serviceProofLink.firstChild.textContent = `${data.proofLabel} `;
+  serviceDemoLink.hidden = !data.demoLink;
+  if (data.demoLink) {
+    serviceDemoLink.href = data.demoLink;
+    serviceDemoLink.firstChild.textContent = `${data.demoLabel} `;
+  }
   serviceDetailLink.hidden = !data.detailLink;
   if (data.detailLink) serviceDetailLink.href = data.detailLink;
+  serviceProofNote.hidden = !data.proofNote;
+  serviceProofNote.textContent = data.proofNote || '';
 }
 
 serviceNodes.forEach(node => node.addEventListener('click', () => selectService(node.dataset.service)));

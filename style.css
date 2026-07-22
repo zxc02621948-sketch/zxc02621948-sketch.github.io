@@ -227,6 +227,7 @@ h3.mini{font-size:20px;color:var(--ink);font-weight:800;margin-bottom:14px;lette
   background:var(--amber-bg);border-radius:5px;text-align:center;padding:3px 0;margin-top:4px}
 .pair .v{flex:1;font-size:15.5px;line-height:1.75}
 .demo-row{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}
+.demo-lab{margin:22px 0 0;padding:24px 26px;border:1px solid var(--line);border-left:4px solid var(--cyan);background:#fff}.demo-lab small{display:block;color:#087aa0;font-size:10px;font-weight:900;letter-spacing:.14em}.demo-lab strong{display:block;margin:8px 0 5px;font-size:20px}.demo-lab p{margin:0;color:#667085;line-height:1.65}.demo-lab .demo-row{margin-top:16px}
 .dbtn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14.5px;font-weight:700;
   color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:9px 16px;
   transition:background .18s,border-color .18s,transform .18s}
