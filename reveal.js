@@ -115,7 +115,7 @@ if (useCustomCursor) {
   addEventListener('pointermove', event => {
     mouseX = event.clientX;
     mouseY = event.clientY;
-    cursorDot.style.transform = `translate(${mouseX - 3}px,${mouseY - 3}px)`;
+    cursorDot.style.transform = `translate(${mouseX - cursorDot.offsetWidth / 2}px,${mouseY - cursorDot.offsetHeight / 2}px)`;
   });
   const followCursor = () => {
     ringX += (mouseX - ringX) * .16;

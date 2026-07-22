@@ -205,7 +205,7 @@ if (finePointer) {
   document.body.classList.add('cursor-ready');
   addEventListener('pointermove', event => {
     mouseX = event.clientX; mouseY = event.clientY;
-    dot.style.transform = `translate(${mouseX - 3}px,${mouseY - 3}px)`;
+    dot.style.transform = `translate(${mouseX - dot.offsetWidth / 2}px,${mouseY - dot.offsetHeight / 2}px)`;
   });
   function follow() {
     ringX += (mouseX - ringX) * .16; ringY += (mouseY - ringY) * .16;

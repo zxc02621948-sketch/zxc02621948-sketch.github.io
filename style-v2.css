@@ -26,10 +26,11 @@ img{display:block;max-width:100%}
 .skip-link:focus{top:16px}
 
 .cursor-dot,.cursor-ring{position:fixed;left:0;top:0;z-index:90;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .2s}
-.cursor-dot{width:6px;height:6px;background:var(--orange)}
-.cursor-ring{width:30px;height:30px;border:1px solid currentColor;color:var(--blue);transition:width .2s,height .2s,color .2s,opacity .2s}
+.cursor-dot{width:10px;height:10px;background:var(--orange);box-shadow:0 0 0 3px rgba(244,155,36,.12)}
+.cursor-ring{width:36px;height:36px;border:1.5px solid currentColor;color:var(--blue);transition:width .2s,height .2s,color .2s,opacity .2s,border-width .2s}
 body.cursor-ready .cursor-dot,body.cursor-ready .cursor-ring{opacity:1}
-body.cursor-link .cursor-ring{width:45px;height:45px;color:var(--orange)}
+body.cursor-ready{cursor:none}body.cursor-ready a,body.cursor-ready button,body.cursor-ready label,body.cursor-ready [role="button"]{cursor:none!important}
+body.cursor-link .cursor-ring{width:50px;height:50px;color:var(--orange);border-width:2px}
 
 .v2-nav{height:84px;display:grid;grid-template-columns:290px 1fr 330px;align-items:stretch;border-bottom:1px solid var(--ink);background:rgba(243,240,231,.92);backdrop-filter:blur(12px);position:sticky;top:0;z-index:40}
 .v2-brand{display:flex;align-items:center;gap:13px;padding:0 34px;border-right:1px solid var(--line)}
