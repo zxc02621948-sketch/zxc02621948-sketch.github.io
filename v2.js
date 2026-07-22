@@ -156,6 +156,9 @@ projectNodes.forEach(node => node.addEventListener('click', () => {
   }
 }));
 
+const requestedProject = new URLSearchParams(window.location.search).get('project');
+if (requestedProject && projectData[requestedProject]) selectProject(requestedProject);
+
 const buildInputs = [...document.querySelectorAll('.build-options input')];
 const estimatePrice = document.querySelector('#estimatePrice');
 const selectedSummary = document.querySelector('#selectedSummary');

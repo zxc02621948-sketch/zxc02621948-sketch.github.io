@@ -17,6 +17,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="logo.png">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="service-v2.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,24 +45,24 @@
   })(window, document, "clarity", "script", "xpzesodivu");
 </script>
 </head>
-<body>
+<body class="detail-page detail-flow">
+<a class="skip-link" href="#detail-main">跳到主要內容</a>
+<header class="v2-nav detail-nav" aria-label="主要導覽">
+  <a class="v2-brand" href="index.html" aria-label="AI 創界首頁">
+    <img src="aicreate-icon.png" alt="" width="48" height="48">
+    <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
+  </a>
+  <nav>
+    <a href="service-ai-kefu.html">AI 客服</a>
+    <a href="service-n8n.html" aria-current="page">流程自動化</a>
+    <a href="service-form.html">資料系統</a>
+    <a href="service-quote.html">AI 報價</a>
+    <a href="why-not-diy.html">自己做？</a>
+  </nav>
+  <a class="nav-talk" href="index.html#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
+</header>
 
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="AI創界">
-      <span class="bt"><b>AI創界</b><small>AI 自動化與系統開發</small></span>
-    </a>
-    <div class="links">
-      <a href="service-ai-kefu.html">AI 客服</a>
-      <a href="service-n8n.html" class="on">流程自動化</a>
-      <a href="service-form.html">資料系統</a>
-      <a href="service-quote.html">AI 報價</a>
-      <a href="why-not-diy.html">自己做？</a>
-      <a href="index.html#contact">聯絡</a>
-    </div>
-  </div>
-</nav>
+<main id="detail-main">
 
 <div class="hero sub">
   <div class="narrow service-hero-layout">
@@ -218,10 +220,10 @@
   <div class="wrap">
     <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>不只這一個案例</h2></div><p>本頁只展開與這項服務最相關的內容；其他正式專案、原型與自有產品可從這裡查看。</p></div>
     <div class="work-mini-grid">
-      <a class="work-mini" data-no="01" href="index.html#case-fulijie"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
-      <a class="work-mini" data-no="02" href="index.html#case-quote"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
-      <a class="work-mini" data-no="03" href="index.html#case-survey"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
-      <a class="work-mini" data-no="04" href="index.html#case-aicreate"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
+      <a class="work-mini" data-no="01" href="index.html?project=fulijie#projects"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
+      <a class="work-mini" data-no="02" href="index.html?project=quote#projects"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
+      <a class="work-mini" data-no="03" href="index.html?project=survey#projects"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
+      <a class="work-mini" data-no="04" href="index.html?project=aicreate#projects"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
     </div>
   </div>
 </section>
@@ -242,6 +244,7 @@
     </div>
   </div>
 </div>
+</main>
 
 <footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
 
