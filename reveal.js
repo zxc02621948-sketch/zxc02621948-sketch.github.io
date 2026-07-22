@@ -100,3 +100,32 @@ document.querySelectorAll('a[href^="http"]').forEach(a => {
   a.target = '_blank';
   a.rel = 'noopener noreferrer';
 });
+
+// 服務內頁沿用首頁的跟隨游標；觸控裝置與減少動態偏好維持系統游標。
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
+const useCustomCursor = cursorDot && cursorRing && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+if (useCustomCursor) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let ringX = 0;
+  let ringY = 0;
+  document.body.classList.add('cursor-ready');
+  addEventListener('pointermove', event => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+    cursorDot.style.transform = `translate(${mouseX - 3}px,${mouseY - 3}px)`;
+  });
+  const followCursor = () => {
+    ringX += (mouseX - ringX) * .16;
+    ringY += (mouseY - ringY) * .16;
+    cursorRing.style.transform = `translate(${ringX - cursorRing.offsetWidth / 2}px,${ringY - cursorRing.offsetHeight / 2}px)`;
+    requestAnimationFrame(followCursor);
+  };
+  followCursor();
+  document.querySelectorAll('a,button,label').forEach(element => {
+    element.addEventListener('pointerenter', () => document.body.classList.add('cursor-link'));
+    element.addEventListener('pointerleave', () => document.body.classList.remove('cursor-link'));
+  });
+}
