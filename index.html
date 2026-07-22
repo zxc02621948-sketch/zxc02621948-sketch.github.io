@@ -1,406 +1,247 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 自動化接案｜LINE Bot、n8n 與客製系統開發｜AI 創界</title>
-<meta name="description" content="台中獨立開發者，承接 LINE Bot 與 AI 客服建置、n8n 流程自動化、客製化表單與自動報價系統。提供可操作 Demo、費用起點與實際案例。">
-<meta name="theme-color" content="#0d0f14">
-<link rel="canonical" href="https://service.aicreateaworld.com/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="zh_TW">
-<meta property="og:site_name" content="AI 創界｜接案服務">
-<meta property="og:title" content="AI 自動化接案｜LINE Bot、n8n 與客製系統開發">
-<meta property="og:description" content="承接 LINE Bot 與 AI 客服、n8n 流程自動化、客製化表單與自動報價系統。查看實際案例、Demo 與費用起點。">
-<meta property="og:url" content="https://service.aicreateaworld.com/">
-<meta property="og:image" content="https://service.aicreateaworld.com/og-preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://service.aicreateaworld.com/og-preview.jpg">
-<link rel="icon" href="logo.png">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://service.aicreateaworld.com/#website",
-      "url": "https://service.aicreateaworld.com/",
-      "name": "AI 創界｜接案服務",
-      "inLanguage": "zh-TW",
-      "publisher": { "@id": "https://service.aicreateaworld.com/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://service.aicreateaworld.com/#organization",
-      "name": "AI 創界｜接案服務",
-      "url": "https://service.aicreateaworld.com/",
-      "logo": "https://service.aicreateaworld.com/logo.png",
-      "image": "https://service.aicreateaworld.com/og-preview.jpg",
-      "email": "mailto:zxc02621948@gmail.com",
-      "founder": { "@id": "https://service.aicreateaworld.com/#person" },
-      "areaServed": { "@type": "Country", "name": "台灣" },
-      "sameAs": [
-        "https://aicreateaworld.com/",
-        "https://github.com/zxc02621948-sketch"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://service.aicreateaworld.com/#person",
-      "name": "陳冠名",
-      "url": "https://service.aicreateaworld.com/",
-      "jobTitle": "AI 自動化與系統開發者",
-      "worksFor": { "@id": "https://service.aicreateaworld.com/#organization" },
-      "knowsAbout": [
-        "AI 客服",
-        "LINE Bot",
-        "n8n 流程自動化",
-        "表單與資料系統",
-        "AI 報價與文件處理"
-      ]
-    }
-  ]
-}
-</script>
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xpzesodivu");
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI 創界提供品牌網站、AI 客服、流程自動化、AI 報價與客製資料系統，從需求整理、製作到上線維運由同一人負責。">
+  <title>AI 創界｜網站、AI 客服與流程自動化</title>
+  <link rel="canonical" href="https://service.aicreateaworld.com/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://service.aicreateaworld.com/">
+  <link rel="alternate" hreflang="en" href="https://service.aicreateaworld.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://service.aicreateaworld.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="AI 創界｜網站、AI 客服與流程自動化">
+  <meta property="og:description" content="把每天重複的工作交給系統處理。品牌網站、AI 客服、自動化與客製資料系統。">
+  <meta property="og:url" content="https://service.aicreateaworld.com/">
+  <meta property="og:image" content="https://service.aicreateaworld.com/og-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="aicreate-icon.png">
+  <link rel="stylesheet" href="style-v2.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="AI創界">
-      <span class="bt"><b>AI創界</b><small>AI 自動化與系統開發</small></span>
+  <header class="v2-nav" aria-label="主要導覽">
+    <a class="v2-brand" href="#top" aria-label="AI 創界首頁">
+      <img src="aicreate-icon.png" alt="" width="48" height="48">
+      <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
     </a>
-    <div class="links">
-      <a href="service-ai-kefu.html">AI 客服</a>
-      <a href="service-n8n.html">流程自動化</a>
-      <a href="service-form.html">資料系統</a>
-      <a href="service-quote.html">AI 報價</a>
-      <a href="why-not-diy.html">自己做？</a>
-      <a href="#contact">聯絡</a>
-    </div>
-  </div>
-</nav>
+    <nav>
+      <a href="#systems">服務系統</a>
+      <a href="#projects">實際案例</a>
+      <a href="#builder">組合需求</a>
+      <a class="lang-switch" href="en/" lang="en" hreflang="en">EN</a>
+    </nav>
+    <a class="mobile-lang-switch" href="en/" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="nav-talk" href="#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
+  </header>
 
-<div class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow rv"><i></i>台中 · 獨立開發者 · 可遠端合作</span>
-        <h1 class="rv">把重複的人工流程，<br>換成<em>會自己跑</em>的系統</h1>
-        <p class="lede rv">承接 AI 客服、流程自動化與資料系統。先從你目前的工作方式找出重複、容易出錯的步驟，再確認哪些值得做成系統。</p>
-        <a class="cta rv" href="#contact">免費諮詢</a>
-        <span class="cta-sub rv">初步討論不收費，我會回覆可行範圍、預估費用與限制</span>
+  <main id="main">
+    <section class="atelier" id="top">
+      <div class="atelier-copy">
+        <p class="overline"><span></span>INDEPENDENT AI SYSTEM STUDIO · 2026</p>
+        <h1>把每天重複的工作，<br><em>交給系統<span class="mobile-break"><br></span>處理。</em></h1>
+        <p class="atelier-lead">網站、AI 客服或自動化，都應該從實際工作開始。先把每天重複做、容易漏掉的事情整理清楚，再決定要怎麼做。</p>
+        <div class="hero-actions">
+          <a class="ink-button" href="#projects">先看做過的成果 <span>↓</span></a>
+          <a class="line-button" href="#builder">組合我的需求</a>
+        </div>
+        <div class="hero-proof" aria-label="服務特點">
+          <span><b>正式營運</b><small>有實際上線的案例</small></span>
+          <span><b>全程負責</b><small>需求、製作與維護</small></span>
+          <span><b>可以試用</b><small>先操作 Demo 再決定</small></span>
+        </div>
       </div>
 
-      <a class="hero-showcase rv" href="https://www.fullyjet.com/" aria-label="查看富立傑木作裝修正式網站">
-        <div class="showcase-bar"><span class="showcase-dots"><i></i><i></i><i></i></span><span>fullyjet.com</span></div>
-        <div class="showcase-image">
-          <img src="case-fulijie.jpg" alt="富立傑木作裝修正式網站案例" width="1200" height="630">
-          <span class="live-badge"><i></i>正式營運中</span>
-        </div>
-        <div class="showcase-body">
-          <span>完整商業案例</span>
+      <div class="atelier-work" aria-label="富立傑正式營運案例">
+        <div class="work-index">PROJECT / 01</div>
+        <img src="case-fulijie.jpg" alt="富立傑木作裝修品牌網站畫面" width="1200" height="630">
+        <div class="orbit-stamp"><span>LIVE</span></div>
+        <div class="work-note">
+          <small>WEBSITE + AI CUSTOMER SERVICE</small>
           <strong>富立傑木作裝修</strong>
-          <p>品牌官網 · AI 諮詢 · SEO · 持續維運</p>
+          <p>品牌官網、內容建置、AI 諮詢與持續維運</p>
         </div>
-      </a>
-    </div>
-  </div>
-</div>
+      </div>
+      <div class="hero-sideword" aria-hidden="true">BUILD · CONNECT · OPERATE</div>
+    </section>
 
-<div class="fit">
-  <div class="wrap">
-    <h3 class="rv">這些情況適合找我</h3>
-    <div class="fit-grid">
-      <div class="fit-item rv">客人問的問題八成重複，但總要有人即時回</div>
-      <div class="fit-item rv">同一份資料要在好幾個系統之間手動搬</div>
-      <div class="fit-item rv">報價、表單、回報還在用 Excel 來回寄</div>
-      <div class="fit-item rv">想用 AI，但很怕它把數字亂編出來</div>
-    </div>
-  </div>
-</div>
-
-<div class="offer-flow">
-<section class="blk services-section">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">02 — 可委託項目</span>
-        <h2>需要哪一類，從這裡開始</h2>
-        <p>看過成果後，這裡整理可委託的範圍與費用起點。實際費用會依功能與串接範圍估算。</p>
+    <div class="signal-tape" aria-hidden="true">
+      <div>網站介紹服務 <b>✦</b> 表單整理需求 <b>✦</b> 系統發送通知 <b>✦</b> 客服回答常見問題 <b>✦</b> 網站介紹服務 <b>✦</b> 表單整理需求 <b>✦</b> 系統發送通知 <b>✦</b></div>
     </div>
 
-    <div class="svc-grid">
-      <a class="svc rv" href="service-ai-kefu.html" data-mark="AI" data-tone="amber">
-        <span class="svc-media"><img src="service-ai-kefu-editorial.jpg" alt="手機對話、木材樣本與尺寸草圖組成的客服工作桌" width="1200" height="720" loading="lazy"></span>
-        <h3>AI 客服 / LINE Bot</h3>
-        <span class="price">起價 <b>NT$35,000</b></span>
-        <p>依照你的產品資料回答常見問題，並沿著對話補問報價所需資訊。遇到無法確認的內容會轉給真人，可串接 LINE 官方帳號、Facebook Messenger、Telegram 與網站。</p>
-        <span class="more">看細節與 Demo →</span>
-      </a>
+    <section class="threshold" aria-label="從設計進入系統">
+      <p>STUDIO / SYSTEM</p>
+      <h2>網站負責介紹，<br><em>系統接手後續。</em></h2>
+      <span>從客戶看到服務，到詢問、整理資料與通知，可以一起規劃。</span>
+    </section>
 
-      <a class="svc rv" href="service-n8n.html" data-mark="N8N" data-tone="teal">
-        <span class="svc-media"><img src="service-n8n-editorial.jpg" alt="訂單收件、標籤列印與資料整理工作流程" width="1200" height="720" loading="lazy"></span>
-        <h3>n8n 流程自動化</h3>
-        <span class="price">單一流程起價 <b>NT$20,000</b></span>
-        <p>表單送出後自動通知、寫入試算表；訂單、庫存或客戶資料在不同系統間同步；固定時間抓資料、整理並寄出報表。流程失敗時會自動重試並通知你。</p>
-        <span class="more">看細節與案例 →</span>
-      </a>
-
-      <a class="svc rv" href="service-form.html" data-mark="DATA" data-tone="blue">
-        <span class="svc-media"><img src="case-survey-editorial.jpg" alt="問卷、分類標籤與資料整理工作桌" width="900" height="1200" loading="lazy"></span>
-        <h3>表單 / 問卷 / 資料系統</h3>
-        <span class="price">起價 <b>NT$50,000</b></span>
-        <p>依填答者身分與前面的答案顯示不同題目，送出後即可查詢、篩選與匯出。適合問卷邏輯複雜，或資料收回後還要花時間整理的工作。</p>
-        <span class="more">看細節與 Demo →</span>
-      </a>
-
-      <a class="svc rv" href="service-quote.html" data-mark="DOC" data-tone="rose">
-        <span class="svc-media"><img src="case-quote-editorial.jpg" alt="工程圖、報價表與計算工具工作桌" width="900" height="1200" loading="lazy"></span>
-        <h3>AI 報價 / 文件處理</h3>
-        <span class="price">起價 <b>NT$40,000</b></span>
-        <p>從需求文字或文件中辨識品項與數量，再依你的目錄和計價規則產生報價。找不到對應品項時標記待確認，不讓 AI 自行補價格。</p>
-        <span class="more">看細節與案例 →</span>
-      </a>
-
-      <div class="svc rv" style="cursor:default">
-        <h3>流程診斷</h3>
-        <span class="price">NT$5,000 · 一到兩天</span>
-        <p>先整理現行流程、使用的工具與例外狀況，再提出可自動化的範圍、預估節省時間、做法與費用。若後續委託開發，診斷費可全額折抵。</p>
-        <span class="more" style="color:var(--muted);font-weight:600">完成後提供書面評估文件</span>
+    <section class="systems" id="systems">
+      <div class="system-grid" aria-hidden="true"></div>
+      <div class="systems-head">
+        <p class="dark-overline">02 · SYSTEM ROUTES</p>
+        <h2>先看你現在怎麼做，<br>再決定<span>需要哪一套系統。</span></h2>
+        <p>點選一項服務，看看它能處理哪些工作。可以先做一項，之後有需要再串接其他功能。</p>
       </div>
 
-      <div class="svc wide rv" style="cursor:default">
-        <h3>上線後支援</h3>
-        <span class="price">按次處理或 <b>NT$2,000 / 月起</b></span>
-        <p>驗收上線後提供 30 天保固，處理已約定功能的異常。保固期滿後可按次處理，或選擇基本維護；需要主動監控、固定調整時數與優先處理，可選 NT$5,000 / 月起的代管方案。<b>不綁約</b>。</p>
-      </div>
-    </div>
+      <div class="control-room">
+        <div class="service-map" role="tablist" aria-label="選擇服務">
+          <span class="connector connector-a"></span>
+          <span class="connector connector-b"></span>
+          <span class="connector connector-c"></span>
+          <span class="connector connector-d"></span>
+          <span class="connector connector-e"></span>
+          <div class="core" aria-hidden="true"><i></i><b>AI</b><small>SYSTEM CORE</small></div>
 
-    <div class="callout rv">
-      <b>預算十萬元以上的案子</b>，通常會先用真實資料測試最複雜的情境，再確認正式範圍。可行性確認約一週，費用可折抵後續開發款。
-    </div>
-  </div>
-</section>
+          <button class="service-node node-web active" type="button" role="tab" aria-selected="true" data-service="web">
+            <small>01</small><b>品牌網站</b><span>營業入口</span>
+          </button>
+          <button class="service-node node-chat" type="button" role="tab" aria-selected="false" data-service="chat">
+            <small>02</small><b>AI 客服</b><span>LINE / Web</span>
+          </button>
+          <button class="service-node node-flow" type="button" role="tab" aria-selected="false" data-service="flow">
+            <small>03</small><b>流程自動化</b><span>n8n 串接</span>
+          </button>
+          <button class="service-node node-data" type="button" role="tab" aria-selected="false" data-service="data">
+            <small>04</small><b>資料系統</b><span>查詢 / 後台</span>
+          </button>
+          <button class="service-node node-quote" type="button" role="tab" aria-selected="false" data-service="quote">
+            <small>05</small><b>AI 報價</b><span>規則計價</span>
+          </button>
+        </div>
 
-<section class="blk tint cases-section">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">01 — 作品與案例</span>
-        <h2>先看做出來的成果</h2>
-        <p>富立傑是正在營運的完整案例；其他作品包含海外專案、需求原型與自有產品。點選後可查看負責範圍、做法與成果。</p>
-    </div>
-
-    <div class="case-select-shell rv">
-      <div class="selector-head"><div><span>SELECT A PROJECT</span><h3>選擇一個案例</h3></div><p>點選角色卡，查看完整負責範圍與成果。</p></div>
-      <div class="case-selector" role="tablist" aria-label="選擇案例">
-        <button class="case-choice active" id="tab-case-fulijie" type="button" role="tab" aria-selected="true" aria-controls="case-fulijie" data-case-target="case-fulijie">
-          <span class="choice-diamond"><img src="case-fulijie.jpg" alt="" width="1200" height="630"></span>
-          <span class="choice-copy"><small>01 · 正式商業案例</small><b>富立傑木作裝修</b></span>
-        </button>
-        <button class="case-choice" id="tab-case-quote" type="button" role="tab" aria-selected="false" aria-controls="case-quote" data-case-target="case-quote" tabindex="-1">
-          <span class="choice-diamond"><img src="case-quote-editorial.jpg" alt="" width="900" height="1200"></span>
-          <span class="choice-copy"><small>02 · 海外客戶專案</small><b>AI 報價助手</b></span>
-        </button>
-        <button class="case-choice" id="tab-case-survey" type="button" role="tab" aria-selected="false" aria-controls="case-survey" data-case-target="case-survey" tabindex="-1">
-          <span class="choice-diamond"><img src="case-survey-editorial.jpg" alt="" width="900" height="1200"></span>
-          <span class="choice-copy"><small>03 · 客戶需求原型</small><b>引導式問卷系統</b></span>
-        </button>
-        <button class="case-choice" id="tab-case-aicreate" type="button" role="tab" aria-selected="false" aria-controls="case-aicreate" data-case-target="case-aicreate" tabindex="-1">
-          <span class="choice-diamond"><img src="aicreate-selector-cover.png" alt="" width="1254" height="1254"></span>
-          <span class="choice-copy"><small>04 · 自有產品</small><b>AI 創界</b></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="case-stage">
-    <div class="case featured-case wood-case rv" id="case-fulijie" role="tabpanel" aria-labelledby="tab-case-fulijie" tabindex="0" data-case-panel>
-      <div class="case-content">
-        <div class="case-kicker"><span>01</span><b>FULL-SCOPE CASE</b></div>
-        <div class="case-top">
-          <div>
-            <h3>富立傑木作裝修｜品牌官網與 AI 諮詢系統</h3>
-            <div class="tags">正式官網 · LINE / 網站 AI 諮詢 · 圖片辨識 · SEO 與內容架構</div>
+        <article class="system-console" aria-live="polite">
+          <div class="console-bar"><span></span><span></span><span></span><b id="serviceCode">ROUTE_01 / BRAND WEBSITE</b></div>
+          <p class="console-state"><i></i><span id="serviceStatus">適合需要官網介紹服務與接收詢問的品牌</span></p>
+          <h3 id="serviceTitle">把服務說清楚，讓客戶知道怎麼聯絡或下單。</h3>
+          <p id="serviceText">整理品牌內容、服務項目、案例與聯絡方式；需要時也能加上客服、表單或通知功能。</p>
+          <div class="console-output">
+            <span>輸入<em id="serviceInput">品牌資料、服務內容、案例</em></span>
+            <b>→</b>
+            <span>輸出<em id="serviceOutput">可營業的品牌網站</em></span>
           </div>
-          <span class="chip live">● 正式營運中</span>
-        </div>
-        <div class="pair"><span class="k">範圍</span><p class="v">由業主授權，獨立負責網站規劃、內容整理、建置上線、搜尋引擎設定、AI 諮詢系統與後續維運。</p></div>
-        <div class="pair"><span class="k">做法</span><p class="v">官網集中呈現服務與工程案例，網站及 LINE 諮詢助理則先回答常見問題、辨識客人傳送的照片，並補問尺寸與施工地點；無法確認時連同對話內容轉給真人。</p></div>
-        <div class="pair"><span class="k">狀態</span><p class="v">正式網站與 AI 諮詢流程持續營運，案例內容、網站功能與客服流程皆由我維護。</p></div>
-        <div class="demo-row">
-          <a class="dbtn" href="https://www.fullyjet.com/"><span>→</span> 查看正式網站</a>
-          <a class="dbtn" href="https://lin.ee/RNYMLFM"><span>→</span> 體驗 LINE AI 諮詢</a>
-          <a class="dbtn" href="https://service.aicreateaworld.com/ai-kefu-playground/"><span>→</span> 網頁版 Demo</a>
-        </div>
+          <a id="serviceLink" href="#builder">把這項加入需求 <span>＋</span></a>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="case system-case quote-case rv" id="case-quote" role="tabpanel" aria-labelledby="tab-case-quote" tabindex="0" data-case-panel>
-      <div class="system-visual" aria-hidden="true">
-        <span class="visual-label">02 · QUOTE ENGINE</span>
-        <div class="quote-method"><span>需求整理</span><span>目錄比對</span><span>規則計價</span></div>
-        <strong>資料決定價格<br><em>AI 不亂猜</em></strong>
+    <section class="projects" id="projects">
+      <div class="projects-head">
+        <p class="light-overline">03 · PROJECT FIELD</p>
+        <h2>四個案例，<br><em>四種不同的需求。</em></h2>
+        <p>點選案例，可以查看我負責的內容、使用的做法與目前狀態。</p>
       </div>
-      <div class="case-content"><div class="case-top">
-        <div>
-          <h3>AI 報價助手</h3>
-          <div class="tags">為瑞士水電工程客戶開發 · LLM 抽取 · 確定性計價</div>
+
+      <div class="project-explorer">
+      <div class="project-field">
+        <span class="field-line line-one" aria-hidden="true"></span>
+        <span class="field-line line-two" aria-hidden="true"></span>
+        <span class="field-line line-three" aria-hidden="true"></span>
+        <div class="field-core" aria-hidden="true"><span>SELECT</span><b>A PROJECT</b></div>
+
+        <button class="project-node project-one active" type="button" data-project="fulijie" aria-pressed="true">
+          <img src="case-fulijie.jpg" alt="富立傑木作裝修網站">
+          <span><small>01 · 正式營運</small><b>富立傑木作裝修</b></span>
+        </button>
+        <button class="project-node project-two" type="button" data-project="quote" aria-pressed="false">
+          <img src="case-quote-editorial.jpg" alt="AI 報價助手">
+          <span><small>02 · 海外專案</small><b>AI 報價助手</b></span>
+        </button>
+        <button class="project-node project-three" type="button" data-project="survey" aria-pressed="false">
+          <img src="case-survey-editorial.jpg" alt="引導式問卷系統">
+          <span><small>03 · 需求原型</small><b>引導式問卷</b></span>
+        </button>
+        <button class="project-node project-four" type="button" data-project="aicreate" aria-pressed="false">
+          <img src="aicreate-selector-cover.png" alt="AI 創界內容平台">
+          <span><small>04 · 自有產品</small><b>AI 創界</b></span>
+        </button>
+      </div>
+
+      <article class="project-drawer" aria-live="polite">
+        <div class="drawer-count"><span id="projectNumber">01</span><small>/ 04</small></div>
+        <div class="drawer-copy">
+          <p id="projectTag">正式營運案例 · WEBSITE + AI</p>
+          <h3 id="projectTitle">富立傑木作裝修</h3>
+          <p id="projectText">從品牌官網、內容整理到 LINE 與網頁 AI 諮詢流程獨立完成；目前持續服務實際客戶並負責上線後維運。</p>
         </div>
-        <span class="chip">海外客戶</span>
+        <div class="drawer-meta" id="projectMeta"><span>品牌官網</span><span>SEO</span><span>AI 客服</span><span>維運</span></div>
+        <a id="projectLink" href="https://www.fullyjet.com/" target="_blank" rel="noopener">查看正式網站 <b>↗</b></a>
+      </article>
       </div>
-          <div class="pair"><span class="k">問題</span><p class="v">技師以文字描述施工需求，行政人員再逐項查閱商品目錄、確認價格並計算稅額，最後整理成報價單。</p></div>
-          <div class="pair"><span class="k">做法</span><p class="v">語言模型先擷取品項與數量，程式再比對供應商目錄並依規則計算。找不到的項目標為「待確認」，最後輸出包含利潤、工時、車馬費與稅額的報價內容。</p></div>
-          <div class="pair"><span class="k">結果</span><p class="v">報價中的單價與計算結果都有資料來源，不由模型自行產生。系統以自架 n8n 提供 API，供前端網頁呼叫。</p></div>
-      <div class="demo-row">
-        <a class="dbtn" href="https://service.aicreateaworld.com/ai-quote-demo/"><span>→</span> 打開報價助手 Demo</a>
-        <a class="dbtn" href="service-quote.html"><span>→</span> 這類案子的細節</a>
-      </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="case system-case survey-case rv" id="case-survey" role="tabpanel" aria-labelledby="tab-case-survey" tabindex="0" data-case-panel>
-      <div class="system-visual" aria-hidden="true">
-        <span class="visual-label">03 · GUIDED FORM</span>
-        <div class="survey-method"><span>條件題目</span><span>分類保存</span><span>直接匯出</span></div>
-        <strong>每個人只看到<br><em>需要回答的題目</em></strong>
+    <section class="builder" id="builder">
+      <div class="builder-title">
+        <p class="blue-overline">04 · PROJECT BUILDER</p>
+        <h2>勾選需要的功能，<br><em>先抓大概預算。</em></h2>
+        <p>這裡提供初步估算，方便你判斷預算是否合適。正式費用會在確認資料量、頁數與串接方式後提供。</p>
       </div>
-      <div class="case-content"><div class="case-top">
-        <div>
-          <h3>引導式問卷與資料蒐集系統</h3>
-          <div class="tags">為永續顧問公司開發之原型 · 條件邏輯 · 一次性連結</div>
-        </div>
-        <span class="chip">可操作 Demo</span>
-      </div>
-          <div class="pair"><span class="k">問題</span><p class="v">受評公司以 Excel 填寫問卷，但同一份表單包含所有部門的題目，填答者要自行判斷相關項目；收回後還要重新整理才能分析。</p></div>
-          <div class="pair"><span class="k">做法</span><p class="v">依填答者職位與前面的答案顯示題目，表格即時計算，送出前集中檢查缺漏。管理端可新增、修改、預覽與發布題目。</p></div>
-          <div class="pair"><span class="k">結果</span><p class="v">資料依公司、年度、題號與分類保存，可篩選、匯出或串接報表工具。填答者以專屬連結進入，不需另外建立帳號。</p></div>
-      <div class="demo-row">
-        <a class="dbtn" href="https://service.aicreateaworld.com/survey-system-demo/"><span>→</span> 打開問卷系統 Demo</a>
-      </div>
-      </div>
-    </div>
 
-    <div class="case system-case platform-case rv" id="case-aicreate" role="tabpanel" aria-labelledby="tab-case-aicreate" tabindex="0" data-case-panel>
-      <div class="system-visual platform-actual" aria-hidden="true">
-        <div class="platform-brand-lockup">
-          <img src="aicreate-icon.png" alt="" width="403" height="421">
-          <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
-        </div>
-        <div class="platform-gallery">
-          <img class="gallery-tall" src="aicreate-gallery-image.jpg" alt="" width="512" height="768" loading="lazy">
-          <img src="aicreate-gallery-dragon.jpg" alt="" width="512" height="768" loading="lazy">
-          <img src="aicreate-gallery-music.jpg" alt="" width="360" height="360" loading="lazy">
-          <img src="aicreate-gallery-video.jpg" alt="" width="1280" height="720" loading="lazy">
-        </div>
-        <div class="platform-channel-list"><small>內容類型</small><span>圖片</span><span>音樂</span><span>影片</span></div>
-      </div>
-      <div class="case-content"><div class="case-top">
-        <div>
-          <h3>AI 創界</h3>
-          <div class="tags">圖片、音樂與影片創作平台 · 個人獨立開發 · Next.js · MongoDB</div>
-        </div>
-        <span class="chip live">● 上線營運中</span>
-      </div>
-          <div class="pair"><span class="k">內容</span><p class="v">獨立完成並持續維運的內容平台，包含帳號、媒體處理、內容審核、搜尋與社群功能；目前有兩百多支 API、五百多個程式檔案。</p></div>
-          <div class="pair"><span class="k">經驗</span><p class="v">涵蓋需求設計、開發、部署、監控與線上問題處理，也因此能在接案時一併考慮系統上線後的維護方式。</p></div>
-      <div class="demo-row">
-        <a class="dbtn" href="https://aicreateaworld.com"><span>→</span> aicreateaworld.com</a>
-        <a class="dbtn" href="https://github.com/zxc02621948-sketch"><span>→</span> GitHub</a>
-      </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-</div>
+      <div class="builder-board">
+        <fieldset class="build-options" aria-describedby="multiHint">
+          <legend>我目前需要（可複選）</legend>
+          <p class="multi-note" id="multiHint"><b>每一項都是獨立功能。</b>需要幾項就勾幾項，右側會顯示所選功能的加總參考。多項一起製作時，可能共用資料與後台，正式報價不一定等於單價直接相加。</p>
+          <label><input type="checkbox" value="18000" data-label="品牌網站"><span><i>01</i><b>品牌網站</b><small>讓客戶看懂服務並開始詢問</small></span></label>
+          <label><input type="checkbox" value="35000" data-label="AI 客服"><span><i>02</i><b>AI 客服</b><small>依你的資料回答並補問需求</small></span></label>
+          <label><input type="checkbox" value="20000" data-label="流程自動化"><span><i>03</i><b>流程自動化</b><small>通知、同步、排程與例外處理</small></span></label>
+          <label><input type="checkbox" value="50000" data-label="資料系統"><span><i>04</i><b>資料系統</b><small>查詢、篩選、匯出與管理後台</small></span></label>
+          <label><input type="checkbox" value="40000" data-label="AI 報價"><span><i>05</i><b>AI 報價</b><small>目錄比對、規則計價與待確認標記</small></span></label>
+        </fieldset>
 
-<div class="why-sec">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">03 — 差異</span>
-      <h2>為什麼是我</h2>
-        <p>以下是我在規劃與交付時採用的原則。</p>
-    </div>
-    <div class="why-grid">
-      <div class="why rv">
-        <span class="n">01</span>
-          <h3>先交付可操作版本</h3>
-          <p>客服或自動化流程通常能在幾週內提供第一個可操作版本。開發時間除了主流程，也會用來處理斷線、格式錯誤與資料對不上等例外狀況。</p>
+        <aside class="estimate" aria-live="polite">
+          <div class="estimate-top"><span>PROJECT NOTE</span><b>概念估算</b></div>
+          <p id="selectedSummary">可複選，請勾選需要的功能。</p>
+          <div class="estimate-price"><small>所選功能加總參考</small><strong id="estimatePrice">尚未選擇</strong></div>
+          <p class="estimate-note" id="estimateNote">實際費用仍會依資料整理、頁面數量、串接方式與維護需求確認。</p>
+          <a href="#contact">把需求傳給我 <b>→</b></a>
+        </aside>
       </div>
-      <div class="why rv">
-        <span class="n">02</span>
-          <h3>數字交給規則計算</h3>
-          <p>AI 用來理解文字與分類，金額、庫存和稅額則依資料與程式規則計算。無法比對的項目會標記出來，由人確認。</p>
-      </div>
-      <div class="why rv">
-        <span class="n">03</span>
-          <h3>從現行流程開始討論</h3>
-          <p>不必先整理成功能清單。先說明目前怎麼做、哪裡最花時間，我再協助拆出適合自動化與應保留人工判斷的部分。可用文字、電話或視訊討論。</p>
-      </div>
-      <div class="why rv">
-        <span class="n">04</span>
-          <h3>帳號與系統歸你所有</h3>
-          <p>主機、網域與第三方服務帳號以你的名義申請，我協助設定。交付文件會記錄系統架構、設定位置與問題排查方式，方便日後自行維護或轉交其他人。</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="objection rv">
-      <h3>「那我自己叫 AI 做就好了？」</h3>
-        <p>AI 很適合協助製作小工具或原型，我自己開發時也會使用。差別主要在需求釐清、例外處理、部署、監控與後續維護。</p>
-        <p>例如 LINE 客服除了回答內容，還要決定轉接方式、對話狀態、紀錄保存、權限與用量上限；Webhook 逾時重送也可能造成重複回覆。這些都需要在上線前設計與測試。</p>
-        <p>如果工具只供自己使用，自己用 AI 製作通常很合適；若會直接服務客戶或影響營運，就要把維護責任與故障處理一併納入。</p>
-      <a class="cta-ghost" href="why-not-diy.html" style="margin-top:8px">完整說明，包含什麼情況你真的該自己做 →</a>
-    </div>
-  </div>
-</div>
-
-<section class="blk">
-  <div class="narrow">
-    <div class="sec-head rv">
-      <span class="sec-num">04 — 合作方式</span>
-      <h2>從聊需求到上線</h2>
-    </div>
-    <div class="steps">
-        <div class="step rv"><h3>先聊需求</h3><p>說明目前的做法與最花時間的環節，我會進一步確認流程、資料與例外狀況，再回覆可行範圍、預估費用與時程。可用文字、電話或視訊討論。</p></div>
-        <div class="step rv"><h3>視情況先做診斷</h3><p>若範圍仍不明確，可先做<b>流程診斷（NT$5,000）</b>；規模較大的案子則先用實際資料做可行性確認。兩者費用都可折抵後續開發款。</p></div>
-        <div class="step rv"><h3>確認範圍</h3><p>將功能、交付內容與驗收方式寫成文件，雙方確認後再開始開發；新增或變更的需求會另外估算。</p></div>
-        <div class="step rv"><h3>分階段交付</h3><p>先提供可操作的核心版本，再依確認過的範圍逐步加入功能，讓問題能在開發期間提早發現。</p></div>
-        <div class="step rv"><h3>付款與驗收</h3><p>採訂金加分階段付款；每一階段依事先確認的內容驗收後，再進入下一階段。</p></div>
-        <div class="step rv"><h3>上線之後</h3><p>驗收後有 30 天保固。保固期滿可按次處理、另選維護方案，或由你及其他人接手。</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="contact-sec" id="contact">
-  <div class="narrow">
-    <div class="contact-box rv">
-      <h2>先聊聊，不收費</h2>
-      <p>告訴我目前的工作方式與最想改善的環節，我會先回覆可行方向和大致費用。初步討論不收費。</p>
-      <div class="cta-pair">
-        <a class="cta-line" href="https://line.me/ti/p/~0989285996">加 LINE 聊聊</a>
-        <a class="cta" href="mailto:zxc02621948@gmail.com">寄信給我</a>
-      </div>
-      <div class="links">
+    <section class="contact" id="contact">
+      <p>READY WHEN YOU ARE</p>
+      <h2>有想法，直接告訴我。<br><em>我會先幫你整理需求。</em></h2>
+      <div class="contact-actions">
+        <a href="https://line.me/ti/p/~0989285996">用 LINE 說明需求 <span>↗</span></a>
         <a href="mailto:zxc02621948@gmail.com">zxc02621948@gmail.com</a>
-        <a href="https://github.com/zxc02621948-sketch">GitHub</a>
-        <a href="https://kuanming-portfolio.onrender.com/">作品集</a>
       </div>
-    </div>
-  </div>
-</div>
+      <small>台中 · 可遠端合作 · 從需求釐清到上線維運</small>
+    </section>
+  </main>
 
-<footer>陳冠名（Kuan-Ming Chen）· 台中 · 個人接案</footer>
-
-<script src="reveal.js"></script>
+  <footer><span>© 2026 AI 創界 · Kuan-Ming Chen</span><a href="#top">回到頂端 ↑</a></footer>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AI 創界｜接案服務",
+    "url": "https://service.aicreateaworld.com/",
+    "logo": "https://service.aicreateaworld.com/aicreate-icon.png",
+    "image": "https://service.aicreateaworld.com/og-preview.jpg",
+    "description": "品牌網站、AI 客服、流程自動化、AI 報價與客製資料系統。",
+    "email": "zxc02621948@gmail.com",
+    "telephone": "+886989285996",
+    "areaServed": ["TW", "Worldwide"],
+    "sameAs": ["https://aicreateaworld.com/"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+886989285996",
+      "email": "zxc02621948@gmail.com",
+      "availableLanguage": ["zh-Hant", "en"]
+    }
+  }
+  </script>
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","xpzesodivu");
+  </script>
+  <script src="v2.js"></script>
 </body>
 </html>
