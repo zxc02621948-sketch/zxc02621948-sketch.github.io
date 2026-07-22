@@ -6,7 +6,9 @@ const serviceData = {
     text: '整理品牌內容、服務項目、案例與聯絡方式；需要時也能加上客服、表單或通知功能。',
     input: '品牌資料、服務內容、案例',
     output: '可營業的品牌網站',
-    option: '品牌網站'
+    option: '品牌網站',
+    proofLink: '#projects',
+    proofLabel: '查看正式案例'
   },
   chat: {
     code: 'ROUTE_02 / AI CUSTOMER SERVICE',
@@ -15,7 +17,10 @@ const serviceData = {
     text: '系統會依照你提供的資料回答，也能繼續詢問必要資訊。遇到無法確認的內容，就把對話內容一起轉交真人。',
     input: '產品資料、FAQ、客戶提問',
     output: '有邊界的自動回覆流程',
-    option: 'AI 客服'
+    option: 'AI 客服',
+    proofLink: 'https://service.aicreateaworld.com/ai-kefu-playground/',
+    proofLabel: '直接試用 AI 客服',
+    detailLink: 'service-ai-kefu.html'
   },
   flow: {
     code: 'ROUTE_03 / WORKFLOW AUTOMATION',
@@ -24,7 +29,9 @@ const serviceData = {
     text: '串接表單、Email、LINE、試算表與既有工具，處理資料同步、定期報表和失敗通知。',
     input: '表單、訂單、排程事件',
     output: '會自己接續的工作流程',
-    option: '流程自動化'
+    option: '流程自動化',
+    proofLink: 'service-n8n.html',
+    proofLabel: '查看流程完整說明'
   },
   data: {
     code: 'ROUTE_04 / DATA SYSTEM',
@@ -33,7 +40,10 @@ const serviceData = {
     text: '依照實際工作方式設計欄位、篩選、權限、匯出與管理畫面，日常更新不必每次找人修改。',
     input: '表單紀錄、圖片、客戶資料',
     output: '可操作的查詢與管理後台',
-    option: '資料系統'
+    option: '資料系統',
+    proofLink: 'https://service.aicreateaworld.com/survey-system-demo/',
+    proofLabel: '試用問卷 Demo',
+    detailLink: 'service-form.html'
   },
   quote: {
     code: 'ROUTE_05 / QUOTE ENGINE',
@@ -42,7 +52,10 @@ const serviceData = {
     text: '系統先找出需求中的品項與數量，再比對供應商目錄並依規則計算。不確定的項目會標記出來，交由人工確認。',
     input: '文字需求、商品目錄、計價規則',
     output: '有資料來源的報價內容',
-    option: 'AI 報價'
+    option: 'AI 報價',
+    proofLink: 'https://service.aicreateaworld.com/ai-quote-demo/',
+    proofLabel: '試用報價 Demo',
+    detailLink: 'service-quote.html'
   }
 };
 
@@ -75,6 +88,8 @@ const consoleFields = {
   title: document.querySelector('#serviceTitle'), text: document.querySelector('#serviceText'),
   input: document.querySelector('#serviceInput'), output: document.querySelector('#serviceOutput')
 };
+const serviceProofLink = document.querySelector('#serviceProofLink');
+const serviceDetailLink = document.querySelector('#serviceDetailLink');
 let currentService = 'web';
 
 function selectService(key) {
@@ -87,6 +102,10 @@ function selectService(key) {
     node.setAttribute('aria-selected', String(active));
   });
   Object.keys(consoleFields).forEach(field => { consoleFields[field].textContent = data[field]; });
+  serviceProofLink.href = data.proofLink;
+  serviceProofLink.firstChild.textContent = `${data.proofLabel} `;
+  serviceDetailLink.hidden = !data.detailLink;
+  if (data.detailLink) serviceDetailLink.href = data.detailLink;
 }
 
 serviceNodes.forEach(node => node.addEventListener('click', () => selectService(node.dataset.service)));
@@ -153,7 +172,7 @@ document.querySelector('#serviceLink').addEventListener('click', () => {
   if (target) { target.checked = true; updateEstimate(); }
 });
 
-const revealItems = [...document.querySelectorAll('.systems-head,.control-room,.projects-head,.project-field,.project-drawer,.builder-title,.builder-board,.contact h2')];
+const revealItems = [...document.querySelectorAll('.systems-head,.control-room,.projects-head,.project-field,.project-drawer,.builder-title,.builder-board,.objection-card,.contact h2')];
 revealItems.forEach(item => item.classList.add('reveal-item'));
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
