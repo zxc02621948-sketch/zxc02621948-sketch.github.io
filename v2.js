@@ -201,13 +201,23 @@ const finePointer = matchMedia('(pointer:fine)').matches && !matchMedia('(prefer
 if (finePointer) {
   const dot = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0, pointerSeen = false, contrastFrame = 0;
+  const syncCursorContrast = target => {
+    if (!pointerSeen) return;
+    const currentTarget = target || document.elementFromPoint(mouseX, mouseY);
+    document.body.classList.toggle('cursor-contrast', Boolean(currentTarget?.closest('.contact,.contact-sec')));
+  };
   document.body.classList.add('cursor-ready');
   addEventListener('pointermove', event => {
+    pointerSeen = true;
     mouseX = event.clientX; mouseY = event.clientY;
     dot.style.transform = `translate(${mouseX - dot.offsetWidth / 2}px,${mouseY - dot.offsetHeight / 2}px)`;
-    document.body.classList.toggle('cursor-contrast', Boolean(event.target.closest('.contact,.contact-sec')));
+    syncCursorContrast(event.target);
   });
+  addEventListener('scroll', () => {
+    cancelAnimationFrame(contrastFrame);
+    contrastFrame = requestAnimationFrame(() => syncCursorContrast());
+  }, { passive: true });
   function follow() {
     ringX += (mouseX - ringX) * .16; ringY += (mouseY - ringY) * .16;
     ring.style.transform = `translate(${ringX - ring.offsetWidth / 2}px,${ringY - ring.offsetHeight / 2}px)`;

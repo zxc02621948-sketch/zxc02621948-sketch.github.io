@@ -111,13 +111,25 @@ if (useCustomCursor) {
   let mouseY = 0;
   let ringX = 0;
   let ringY = 0;
+  let pointerSeen = false;
+  let contrastFrame = 0;
+  const syncCursorContrast = target => {
+    if (!pointerSeen) return;
+    const currentTarget = target || document.elementFromPoint(mouseX, mouseY);
+    document.body.classList.toggle('cursor-contrast', Boolean(currentTarget?.closest('.contact,.contact-sec')));
+  };
   document.body.classList.add('cursor-ready');
   addEventListener('pointermove', event => {
+    pointerSeen = true;
     mouseX = event.clientX;
     mouseY = event.clientY;
     cursorDot.style.transform = `translate(${mouseX - cursorDot.offsetWidth / 2}px,${mouseY - cursorDot.offsetHeight / 2}px)`;
-    document.body.classList.toggle('cursor-contrast', Boolean(event.target.closest('.contact,.contact-sec')));
+    syncCursorContrast(event.target);
   });
+  addEventListener('scroll', () => {
+    cancelAnimationFrame(contrastFrame);
+    contrastFrame = requestAnimationFrame(() => syncCursorContrast());
+  }, { passive: true });
   const followCursor = () => {
     ringX += (mouseX - ringX) * .16;
     ringY += (mouseY - ringY) * .16;
