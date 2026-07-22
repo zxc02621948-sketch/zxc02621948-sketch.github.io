@@ -206,6 +206,7 @@ if (finePointer) {
   addEventListener('pointermove', event => {
     mouseX = event.clientX; mouseY = event.clientY;
     dot.style.transform = `translate(${mouseX - dot.offsetWidth / 2}px,${mouseY - dot.offsetHeight / 2}px)`;
+    document.body.classList.toggle('cursor-contrast', Boolean(event.target.closest('.contact,.contact-sec')));
   });
   function follow() {
     ringX += (mouseX - ringX) * .16; ringY += (mouseY - ringY) * .16;

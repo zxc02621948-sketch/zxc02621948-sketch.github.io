@@ -116,6 +116,7 @@ if (useCustomCursor) {
     mouseX = event.clientX;
     mouseY = event.clientY;
     cursorDot.style.transform = `translate(${mouseX - cursorDot.offsetWidth / 2}px,${mouseY - cursorDot.offsetHeight / 2}px)`;
+    document.body.classList.toggle('cursor-contrast', Boolean(event.target.closest('.contact,.contact-sec')));
   });
   const followCursor = () => {
     ringX += (mouseX - ringX) * .16;
