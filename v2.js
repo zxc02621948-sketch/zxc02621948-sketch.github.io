@@ -23,7 +23,7 @@ const serviceData = {
     demoLink: 'https://service.aicreateaworld.com/ai-kefu-playground/',
     demoLabel: '開啟網頁版 Demo',
     detailLink: 'service-ai-kefu.html',
-    proofNote: 'LINE 與網頁 Demo 均為獨立測試環境，非富立傑官方帳號。'
+    proofNote: 'LINE 與網頁 Demo 均為獨立測試環境，可自由操作。'
   },
   flow: {
     code: 'ROUTE_03 / WORKFLOW AUTOMATION',
