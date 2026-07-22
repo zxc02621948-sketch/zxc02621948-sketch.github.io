@@ -170,11 +170,12 @@ function updateEstimate() {
     return;
   }
   const total = selected.reduce((sum, input) => sum + Number(input.value), 0);
+  const lower = selected.length > 1 ? Math.ceil(total * .9 / 1000) * 1000 : total;
   const upper = Math.ceil(total * 1.25 / 1000) * 1000;
-  estimatePrice.textContent = `NT$${total.toLocaleString('zh-TW')}～${upper.toLocaleString('zh-TW')}`;
+  estimatePrice.textContent = `NT$${lower.toLocaleString('zh-TW')}～${upper.toLocaleString('zh-TW')}`;
   selectedSummary.textContent = `已選 ${selected.length} 項：${selected.map(input => input.dataset.label).join('、')}。`;
   estimateNote.textContent = selected.length > 1
-    ? '多項整合通常會共用部分資料、帳號或後台，正式報價可能低於畫面上的直接加總。'
+    ? '區間下限已納入共用資料、帳號或後台的情況；資料量、串接與例外處理較複雜時，費用會接近上限。'
     : '實際費用仍會依資料整理、頁面數量、串接方式與維護需求確認。';
 }
 
