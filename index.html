@@ -18,6 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="aicreate-icon.png">
   <link rel="stylesheet" href="style-v2.css">
+  <link rel="stylesheet" href="site-shell.css">
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要內容</a>
@@ -30,14 +31,15 @@
       <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
     </a>
     <nav>
+      <a href="service-web.html">網站製作</a>
       <a href="service-ai-kefu.html">AI 客服</a>
       <a href="service-n8n.html">流程自動化</a>
       <a href="service-form.html">資料系統</a>
       <a href="service-quote.html">AI 報價</a>
-      <a href="why-not-diy.html">自己做？</a>
-      <a class="lang-switch" href="en/" lang="en" hreflang="en">EN</a>
+      <a href="why-not-diy.html">原型與上線</a>
+      <a class="lang-switch" href="en/index.html" lang="en" hreflang="en">EN</a>
     </nav>
-    <a class="mobile-lang-switch" href="en/" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="mobile-lang-switch" href="en/index.html" lang="en" hreflang="en" aria-label="English version">EN</a>
     <a class="nav-talk" href="#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
   </header>
 
@@ -46,15 +48,15 @@
       <div class="atelier-copy">
         <p class="overline"><span></span>INDEPENDENT AI SYSTEM STUDIO · 2026</p>
         <h1>把每天重複的工作，<br><em>交給系統<span class="mobile-break"><br></span>處理。</em></h1>
-        <p class="atelier-lead">網站、AI 客服或自動化，都應該從實際工作開始。先把每天重複做、容易漏掉的事情整理清楚，再決定要怎麼做。</p>
+        <p class="atelier-lead">網站、AI 客服與自動化都從實際工作出發。我會整理每天重複、容易漏掉的環節，找出適合交給系統處理的部分。</p>
         <div class="hero-actions">
           <a class="ink-button" href="#projects">先看做過的成果 <span>↓</span></a>
-          <a class="line-button" href="#builder">組合我的需求</a>
+          <a class="line-button" href="#systems">查看服務內容</a>
         </div>
         <div class="hero-proof" aria-label="服務特點">
           <span><b>正式營運</b><small>有實際上線的案例</small></span>
           <span><b>全程負責</b><small>需求、製作與維護</small></span>
-          <span><b>可以試用</b><small>先操作 Demo 再決定</small></span>
+          <span><b>可以試用</b><small>提供可操作的 Demo</small></span>
         </div>
       </div>
 
@@ -63,7 +65,7 @@
         <img src="case-fulijie.jpg" alt="富立傑木作裝修品牌網站畫面" width="1200" height="630">
         <div class="orbit-stamp"><span>LIVE</span></div>
         <div class="work-note">
-          <small>WEBSITE + AI CUSTOMER SERVICE</small>
+          <small>WEBSITE + WEB AI CONSULTATION</small>
           <strong>富立傑木作裝修</strong>
           <p>品牌官網、內容建置、AI 諮詢與持續維運</p>
         </div>
@@ -85,8 +87,8 @@
       <div class="system-grid" aria-hidden="true"></div>
       <div class="systems-head">
         <p class="dark-overline">02 · SYSTEM ROUTES</p>
-        <h2>先看你現在怎麼做，<br>再決定<span>需要哪一套系統。</span></h2>
-        <p>點選一項服務，看看它能處理哪些工作。可以先做一項，之後有需要再串接其他功能。</p>
+        <h2>看看你現在怎麼做，<br>找到<span>適合的系統。</span></h2>
+        <p>點選一項服務，看看它能處理哪些工作。每項服務可單獨建置，也能依後續需求串接。</p>
       </div>
 
       <div class="control-room">
@@ -98,24 +100,24 @@
           <span class="connector connector-e"></span>
           <div class="core" aria-hidden="true"><i></i><b>AI</b><small>SYSTEM CORE</small></div>
 
-          <button class="service-node node-web active" type="button" role="tab" aria-selected="true" data-service="web">
+          <button class="service-node node-web active" id="serviceTabWeb" type="button" role="tab" aria-selected="true" aria-controls="servicePanel" tabindex="0" data-service="web">
             <small>01</small><b>品牌網站</b><span>營業入口</span>
           </button>
-          <button class="service-node node-chat" type="button" role="tab" aria-selected="false" data-service="chat">
-            <small>02</small><b>AI 客服</b><span>LINE / Web</span>
+          <button class="service-node node-chat" id="serviceTabChat" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="chat">
+            <small>02</small><b>AI 客服</b><span>導購 / 預約</span>
           </button>
-          <button class="service-node node-flow" type="button" role="tab" aria-selected="false" data-service="flow">
+          <button class="service-node node-flow" id="serviceTabFlow" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="flow">
             <small>03</small><b>流程自動化</b><span>n8n 串接</span>
           </button>
-          <button class="service-node node-data" type="button" role="tab" aria-selected="false" data-service="data">
+          <button class="service-node node-data" id="serviceTabData" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="data">
             <small>04</small><b>資料系統</b><span>查詢 / 後台</span>
           </button>
-          <button class="service-node node-quote" type="button" role="tab" aria-selected="false" data-service="quote">
+          <button class="service-node node-quote" id="serviceTabQuote" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="quote">
             <small>05</small><b>AI 報價</b><span>規則計價</span>
           </button>
         </div>
 
-        <article class="system-console" aria-live="polite">
+        <article class="system-console" id="servicePanel" role="tabpanel" aria-labelledby="serviceTabWeb" aria-live="polite">
           <div class="console-bar"><span></span><span></span><span></span><b id="serviceCode">ROUTE_01 / BRAND WEBSITE</b></div>
           <p class="console-state"><i></i><span id="serviceStatus">適合需要官網介紹服務與接收詢問的品牌</span></p>
           <h3 id="serviceTitle">把服務說清楚，讓客戶知道怎麼聯絡或下單。</h3>
@@ -128,8 +130,7 @@
           <div class="system-console-actions">
             <a id="serviceProofLink" href="#projects">查看正式案例 <span>↗</span></a>
             <a id="serviceDemoLink" href="" hidden>開啟網頁版 Demo <span>↗</span></a>
-            <a id="serviceDetailLink" href="" hidden>服務完整說明 <span>↗</span></a>
-            <a id="serviceLink" href="#builder">加入需求 <span>＋</span></a>
+            <a id="serviceLink" href="service-web.html">查看服務與費用 <span>↗</span></a>
           </div>
           <p class="service-proof-note" id="serviceProofNote" hidden></p>
         </article>
@@ -139,8 +140,8 @@
     <section class="projects" id="projects">
       <div class="projects-head">
         <p class="light-overline">03 · PROJECT FIELD</p>
-        <h2>四個案例，<br><em>四種不同的需求。</em></h2>
-        <p>點選案例，可以查看我負責的內容、使用的做法與目前狀態。</p>
+        <h2>四項成果，<br><em>四種不同的需求。</em></h2>
+        <p>點選成果，可以查看我負責的內容、使用的做法與目前狀態。</p>
       </div>
 
       <div class="project-explorer">
@@ -151,19 +152,19 @@
         <div class="field-core" aria-hidden="true"><span>SELECT</span><b>A PROJECT</b></div>
 
         <button class="project-node project-one active" type="button" data-project="fulijie" aria-pressed="true">
-          <img src="case-fulijie.jpg" alt="富立傑木作裝修網站">
+          <img src="case-fulijie.jpg" alt="富立傑木作裝修網站" width="1200" height="630">
           <span><small>01 · 正式營運</small><b>富立傑木作裝修</b></span>
         </button>
         <button class="project-node project-two" type="button" data-project="quote" aria-pressed="false">
-          <img src="case-quote-editorial.jpg" alt="AI 報價助手">
+          <img src="case-quote-editorial.jpg" alt="AI 報價助手" width="900" height="1200">
           <span><small>02 · 海外專案</small><b>AI 報價助手</b></span>
         </button>
         <button class="project-node project-three" type="button" data-project="survey" aria-pressed="false">
-          <img src="case-survey-editorial.jpg" alt="引導式問卷系統">
+          <img src="case-survey-editorial.jpg" alt="引導式問卷系統" width="900" height="1200">
           <span><small>03 · 需求原型</small><b>引導式問卷</b></span>
         </button>
         <button class="project-node project-four" type="button" data-project="aicreate" aria-pressed="false">
-          <img src="aicreate-selector-cover.png" alt="AI 創界內容平台">
+          <img src="aicreate-selector-cover.webp" alt="AI 創界內容平台" width="900" height="900">
           <span><small>04 · 自有產品</small><b>AI 創界</b></span>
         </button>
       </div>
@@ -181,41 +182,57 @@
       </div>
     </section>
 
-    <section class="builder" id="builder">
-      <div class="builder-title">
-        <p class="blue-overline">04 · PROJECT BUILDER</p>
-        <h2>勾選需要的功能，<br><em>先抓大概預算。</em></h2>
-        <p>這裡提供初步估算，方便你判斷預算是否合適。正式費用會在確認資料量、頁數與串接方式後提供。</p>
+    <section class="process-section" id="process">
+      <div class="process-head">
+        <p class="blue-overline">04 · HOW WE WORK</p>
+        <h2>直接說明目前的做法，<br><em>我會整理成可執行的範圍。</em></h2>
+        <p>合作初期會確認現況、本次處理範圍與驗收標準，讓製作內容和預期結果都有明確依據。</p>
       </div>
 
-      <div class="builder-board">
-        <fieldset class="build-options" aria-describedby="multiHint">
-          <legend>我目前需要（可複選）</legend>
-          <p class="multi-note" id="multiHint"><b>每一項都是獨立功能。</b>需要幾項就勾幾項，右側會顯示整合後的概念區間。多項一起製作時可能共用資料與後台；若資料量、串接或例外處理較複雜，費用則會接近區間上限。</p>
-          <label><input type="checkbox" value="18000" data-label="品牌網站"><span><i>01</i><b>品牌網站</b><small>讓客戶看懂服務並開始詢問</small></span></label>
-          <label><input type="checkbox" value="35000" data-label="AI 客服"><span><i>02</i><b>AI 客服</b><small>依你的資料回答並補問需求</small></span></label>
-          <label><input type="checkbox" value="20000" data-label="流程自動化"><span><i>03</i><b>流程自動化</b><small>通知、同步、排程與例外處理</small></span></label>
-          <label><input type="checkbox" value="50000" data-label="資料系統"><span><i>04</i><b>資料系統</b><small>查詢、篩選、匯出與管理後台</small></span></label>
-          <label><input type="checkbox" value="40000" data-label="AI 報價"><span><i>05</i><b>AI 報價</b><small>目錄比對、規則計價與待確認標記</small></span></label>
-        </fieldset>
+      <div class="process-board">
+        <div class="process-steps">
+          <article><span>01</span><small>UNDERSTAND</small><h3>說明現在的做法</h3><p>不用整理成規格書。告訴我目前怎麼處理、哪裡最花時間、最容易出錯或漏掉。</p><ul><li>現有資料與工具</li><li>實際使用的人</li><li>希望改善的結果</li></ul></article>
+          <article><span>02</span><small>DEFINE</small><h3>確認範圍與正式報價</h3><p>把頁面、流程、資料與串接方式拆開，依重要性排出本次內容和後續項目。</p><ul><li>功能與交付內容</li><li>時程與驗收方式</li><li>費用與後續支援</li></ul></article>
+          <article><span>03</span><small>BUILD & OPERATE</small><h3>製作、測試與上線</h3><p>使用實際情境完成測試與修正，確認後交付正式版本。上線後依約定方式處理異常與調整。</p><ul><li>測試案例與修正</li><li>部署及操作說明</li><li>保固或維護安排</li></ul></article>
+        </div>
 
-        <aside class="estimate" aria-live="polite">
-          <div class="estimate-top"><span>PROJECT NOTE</span><b>概念估算</b></div>
-          <p id="selectedSummary">可複選，請勾選需要的功能。</p>
-          <div class="estimate-price"><small>預估建置區間</small><strong id="estimatePrice">尚未選擇</strong></div>
-          <p class="estimate-note" id="estimateNote">實際費用仍會依資料整理、頁面數量、串接方式與維護需求確認。</p>
-          <a href="#contact">把需求傳給我 <b>→</b></a>
+        <aside class="scope-note">
+          <small>BEFORE THE BUILD</small>
+          <h3>正式報價會拆開列出各項內容。</h3>
+          <p>你會先知道錢花在哪裡，以及哪些事情不在這次範圍內。</p>
+          <dl>
+            <div><dt>本次包含</dt><dd>功能、頁面、資料整理與交付內容</dd></div>
+            <div><dt>本次不含</dt><dd>避免做到一半才發現雙方理解不同</dd></div>
+            <div><dt>外部費用</dt><dd>主機、模型、LINE 或其他平台成本</dd></div>
+            <div><dt>上線之後</dt><dd>保固期限、按次修改或維護方案</dd></div>
+          </dl>
+          <span>若網站、客服與自動化能共用資料或流程，會合併評估，不會直接把每個起價相加。</span>
         </aside>
       </div>
 
       <a class="objection-card" href="why-not-diy.html">
         <div>
           <small>BEFORE YOU DECIDE</small>
-          <strong>「那我自己叫 AI 做就好了？」</strong>
-          <p>如果你正在比較自己做、套版或客製開發，先看看真正容易卡住的是哪些地方。</p>
+          <strong>AI 做得出來，還需要委託嗎？</strong>
+          <p>原型可以快速驗證想法；正式營運還需要有人把需求、測試、上線與維護接起來。</p>
         </div>
         <span>看完整說明 ↗</span>
       </a>
+    </section>
+
+    <section class="studio-about" aria-labelledby="studio-about-title">
+      <div class="studio-about-label"><span>05 · ABOUT</span><b>TAICHUNG / REMOTE</b></div>
+      <div class="studio-about-copy">
+        <h2 id="studio-about-title">一個窗口，<br><em>從需求談到上線。</em></h2>
+        <p>我是陳冠名，位於台中。每個專案由我直接整理需求、設計、製作、部署與後續維護，不需要在業務、設計與開發之間反覆轉述。</p>
+        <p>如果需求超出目前能穩定交付的範圍，或需要其他專業協作，我會在報價前先說明，不把尚未確認的功能直接答應下來。</p>
+      </div>
+      <div class="studio-about-facts" aria-label="合作方式">
+        <span><small>負責方式</small><b>本人直接對接</b></span>
+        <span><small>服務地點</small><b>台中 · 可遠端</b></span>
+        <span><small>合作範圍</small><b>規劃 · 製作 · 維運</b></span>
+        <a href="#contact">說明你的需求 <b>→</b></a>
+      </div>
     </section>
 
     <section class="contact" id="contact">
@@ -223,17 +240,18 @@
       <h2>有想法，直接告訴我。<br><em>我會先幫你整理需求。</em></h2>
       <div class="contact-actions">
         <a href="https://line.me/ti/p/~0989285996">用 LINE 說明需求 <span>↗</span></a>
-        <a href="mailto:zxc02621948@gmail.com">zxc02621948@gmail.com</a>
+        <a id="contactEmail" href="mailto:zxc02621948@gmail.com">zxc02621948@gmail.com</a>
       </div>
       <small>台中 · 可遠端合作 · 從需求釐清到上線維運</small>
     </section>
   </main>
 
-  <footer><span>© 2026 AI 創界 · Kuan-Ming Chen</span><a href="#top">回到頂端 ↑</a></footer>
+  <footer><span>© 2026 AI 創界 · Kuan-Ming Chen · <a href="privacy.html">隱私說明</a></span><a href="#top">回到頂端 ↑</a></footer>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://service.aicreateaworld.com/#organization",
     "name": "AI 創界｜接案服務",
     "url": "https://service.aicreateaworld.com/",
     "logo": "https://service.aicreateaworld.com/aicreate-icon.png",
@@ -259,6 +277,7 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window,document,"clarity","script","xpzesodivu");
   </script>
+  <script src="site-shell.js"></script>
   <script src="v2.js"></script>
 </body>
 </html>

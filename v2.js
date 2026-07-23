@@ -8,16 +8,17 @@ const serviceData = {
     output: '可營業的品牌網站',
     option: '品牌網站',
     proofLink: '#projects',
-    proofLabel: '查看正式案例'
+    proofLabel: '查看正式案例',
+    detailLink: 'service-web.html'
   },
   chat: {
     code: 'ROUTE_02 / AI CUSTOMER SERVICE',
-    status: '適合經常收到產品、尺寸與服務問題的店家',
-    title: '常見問題由系統先回答，需要判斷時再轉給真人。',
-    text: '系統會依照你提供的資料回答，也能繼續詢問必要資訊。遇到無法確認的內容，就把對話內容一起轉交真人。',
-    input: '產品資料、FAQ、客戶提問',
-    output: '有邊界的自動回覆流程',
-    option: 'AI 客服',
+    status: '適合想先處理商品導購、預約引導或常見問題的店家',
+    title: '先讓客人完成下一步，需要時再加入補問與真人接手。',
+    text: '可以從商品推薦、直購或預約連結開始；問題較複雜時，再升級成多輪補問、通知真人與對話摘要。',
+    input: '商品／服務資料、預約方式、常見問題',
+    output: '可依需求升級的對話入口',
+    option: 'AI 導購／客服',
     proofLink: 'https://lin.ee/RNYMLFM',
     proofLabel: '加入 LINE 測試版 Demo',
     demoLink: 'https://service.aicreateaworld.com/ai-kefu-playground/',
@@ -27,14 +28,15 @@ const serviceData = {
   },
   flow: {
     code: 'ROUTE_03 / WORKFLOW AUTOMATION',
-    status: '適合每天重複複製資料、發通知與整理紀錄',
-    title: '資料收到後，自動分類、通知並送到下一個工具。',
-    text: '串接表單、Email、LINE、試算表與既有工具，處理資料同步、定期報表和失敗通知。',
-    input: '表單、訂單、排程事件',
-    output: '會自己接續的工作流程',
+    status: '適合重複整理信件、同步庫存、發通知與製作報表',
+    title: '訂單、信件與資料收到後，依規則送到下一個步驟。',
+    text: '串接表單、Email、訂單、庫存、試算表與既有工具，處理分類、同步、定期報表及失敗通知。',
+    input: '訂單、信件、表單與排程事件',
+    output: '會自行接續並留下紀錄的流程',
     option: '流程自動化',
-    proofLink: 'service-n8n.html',
-    proofLabel: '查看流程完整說明'
+    proofLink: 'service-n8n.html#automation-cases',
+    proofLabel: '查看實際流程',
+    detailLink: 'service-n8n.html'
   },
   data: {
     code: 'ROUTE_04 / DATA SYSTEM',
@@ -66,7 +68,7 @@ const projectData = {
   fulijie: {
     number: '01', tag: '正式營運案例 · WEBSITE + AI', title: '富立傑木作裝修',
     text: '從品牌官網、內容整理到網頁 AI 諮詢流程獨立完成；目前持續服務實際客戶並負責上線後維運。',
-    meta: ['品牌官網','SEO','AI 客服','維運'], link: 'https://www.fullyjet.com/', label: '查看正式網站'
+    meta: ['品牌官網','SEO','網頁 AI 諮詢','維運'], link: 'https://www.fullyjet.com/', label: '查看正式網站'
   },
   quote: {
     number: '02', tag: '海外客戶專案 · QUOTE ENGINE', title: 'AI 報價助手',
@@ -93,8 +95,9 @@ const consoleFields = {
 };
 const serviceProofLink = document.querySelector('#serviceProofLink');
 const serviceDemoLink = document.querySelector('#serviceDemoLink');
-const serviceDetailLink = document.querySelector('#serviceDetailLink');
+const serviceLink = document.querySelector('#serviceLink');
 const serviceProofNote = document.querySelector('#serviceProofNote');
+const servicePanel = document.querySelector('#servicePanel');
 let currentService = 'web';
 
 function selectService(key) {
@@ -105,6 +108,8 @@ function selectService(key) {
     const active = node.dataset.service === key;
     node.classList.toggle('active', active);
     node.setAttribute('aria-selected', String(active));
+    node.tabIndex = active ? 0 : -1;
+    if (active) servicePanel.setAttribute('aria-labelledby', node.id);
   });
   Object.keys(consoleFields).forEach(field => { consoleFields[field].textContent = data[field]; });
   serviceProofLink.href = data.proofLink;
@@ -114,13 +119,25 @@ function selectService(key) {
     serviceDemoLink.href = data.demoLink;
     serviceDemoLink.firstChild.textContent = `${data.demoLabel} `;
   }
-  serviceDetailLink.hidden = !data.detailLink;
-  if (data.detailLink) serviceDetailLink.href = data.detailLink;
+  serviceLink.href = data.detailLink || data.proofLink;
   serviceProofNote.hidden = !data.proofNote;
   serviceProofNote.textContent = data.proofNote || '';
 }
 
-serviceNodes.forEach(node => node.addEventListener('click', () => selectService(node.dataset.service)));
+serviceNodes.forEach((node, index) => {
+  node.addEventListener('click', () => selectService(node.dataset.service));
+  node.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    let next = index;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index - 1 + serviceNodes.length) % serviceNodes.length;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % serviceNodes.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = serviceNodes.length - 1;
+    serviceNodes[next].focus();
+    selectService(serviceNodes[next].dataset.service);
+  });
+});
 
 const projectNodes = [...document.querySelectorAll('.project-node')];
 const projectFields = {
@@ -159,36 +176,7 @@ projectNodes.forEach(node => node.addEventListener('click', () => {
 const requestedProject = new URLSearchParams(window.location.search).get('project');
 if (requestedProject && projectData[requestedProject]) selectProject(requestedProject);
 
-const buildInputs = [...document.querySelectorAll('.build-options input')];
-const estimatePrice = document.querySelector('#estimatePrice');
-const selectedSummary = document.querySelector('#selectedSummary');
-const estimateNote = document.querySelector('#estimateNote');
-
-function updateEstimate() {
-  const selected = buildInputs.filter(input => input.checked);
-  if (!selected.length) {
-    estimatePrice.textContent = '尚未選擇';
-    selectedSummary.textContent = '可複選，請勾選需要的功能。';
-    estimateNote.textContent = '實際費用仍會依資料整理、頁面數量、串接方式與維護需求確認。';
-    return;
-  }
-  const total = selected.reduce((sum, input) => sum + Number(input.value), 0);
-  const lower = selected.length > 1 ? Math.ceil(total * .9 / 1000) * 1000 : total;
-  const upper = Math.ceil(total * 1.25 / 1000) * 1000;
-  estimatePrice.textContent = `NT$${lower.toLocaleString('zh-TW')}～${upper.toLocaleString('zh-TW')}`;
-  selectedSummary.textContent = `已選 ${selected.length} 項：${selected.map(input => input.dataset.label).join('、')}。`;
-  estimateNote.textContent = selected.length > 1
-    ? '區間下限已納入共用資料、帳號或後台的情況；資料量、串接與例外處理較複雜時，費用會接近上限。'
-    : '實際費用仍會依資料整理、頁面數量、串接方式與維護需求確認。';
-}
-
-buildInputs.forEach(input => input.addEventListener('change', updateEstimate));
-document.querySelector('#serviceLink').addEventListener('click', () => {
-  const target = buildInputs.find(input => input.dataset.label === serviceData[currentService].option);
-  if (target) { target.checked = true; updateEstimate(); }
-});
-
-const revealItems = [...document.querySelectorAll('.systems-head,.control-room,.projects-head,.project-field,.project-drawer,.builder-title,.builder-board,.objection-card,.contact h2')];
+const revealItems = [...document.querySelectorAll('.systems-head,.control-room,.projects-head,.project-field,.project-drawer,.process-head,.process-board,.objection-card,.studio-about-label,.studio-about-copy,.studio-about-facts,.contact h2')];
 revealItems.forEach(item => item.classList.add('reveal-item'));
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -196,36 +184,3 @@ if ('IntersectionObserver' in window) {
   }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
   revealItems.forEach(item => observer.observe(item));
 } else revealItems.forEach(item => item.classList.add('shown'));
-
-const finePointer = matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches;
-if (finePointer) {
-  const dot = document.querySelector('.cursor-dot');
-  const ring = document.querySelector('.cursor-ring');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0, pointerSeen = false, contrastFrame = 0;
-  const syncCursorContrast = target => {
-    if (!pointerSeen) return;
-    const currentTarget = target || document.elementFromPoint(mouseX, mouseY);
-    document.body.classList.toggle('cursor-contrast', Boolean(currentTarget?.closest('.contact,.contact-sec')));
-  };
-  document.body.classList.add('cursor-ready');
-  addEventListener('pointermove', event => {
-    pointerSeen = true;
-    mouseX = event.clientX; mouseY = event.clientY;
-    dot.style.transform = `translate(${mouseX - dot.offsetWidth / 2}px,${mouseY - dot.offsetHeight / 2}px)`;
-    syncCursorContrast(event.target);
-  });
-  addEventListener('scroll', () => {
-    cancelAnimationFrame(contrastFrame);
-    contrastFrame = requestAnimationFrame(() => syncCursorContrast());
-  }, { passive: true });
-  function follow() {
-    ringX += (mouseX - ringX) * .16; ringY += (mouseY - ringY) * .16;
-    ring.style.transform = `translate(${ringX - ring.offsetWidth / 2}px,${ringY - ring.offsetHeight / 2}px)`;
-    requestAnimationFrame(follow);
-  }
-  follow();
-  document.querySelectorAll('a,button,label').forEach(element => {
-    element.addEventListener('pointerenter', () => document.body.classList.add('cursor-link'));
-    element.addEventListener('pointerleave', () => document.body.classList.remove('cursor-link'));
-  });
-}

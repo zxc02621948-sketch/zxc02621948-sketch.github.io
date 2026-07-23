@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="aicreate-icon.png">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="site-shell.css">
 <link rel="stylesheet" href="service-v2.css">
 <script type="application/ld+json">
 {
@@ -55,22 +55,23 @@
     <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
   </a>
   <nav>
+    <a href="service-web.html">網站製作</a>
     <a href="service-ai-kefu.html">AI 客服</a>
     <a href="service-n8n.html">流程自動化</a>
     <a href="service-form.html">資料系統</a>
     <a href="service-quote.html" aria-current="page">AI 報價</a>
-    <a href="why-not-diy.html">自己做？</a>
-    <a class="lang-switch" href="en/" lang="en" hreflang="en">EN</a>
+    <a href="why-not-diy.html">原型與上線</a>
+      <a class="lang-switch" href="en/index.html#service-quote" lang="en" hreflang="en">EN</a>
   </nav>
-  <a class="mobile-lang-switch" href="en/" lang="en" hreflang="en" aria-label="English version">EN</a>
-  <a class="nav-talk" href="index.html#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
+    <a class="mobile-lang-switch" href="en/index.html#service-quote" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="nav-talk" href="#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
 </header>
 
 <main id="detail-main">
 
 <div class="hero sub">
   <div class="narrow service-hero-layout">
-    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>服務項目 04</span>
+    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>服務項目 05</span>
       <h1 class="rv">AI 報價 / <em>文件處理</em></h1>
       <span class="price-tag rv">起價 NT$40,000</span>
       <p class="lede rv">系統從需求文字中辨識品項與數量，再依你的目錄、工時與稅額規則計算，產生可確認的報價內容。</p>
@@ -124,7 +125,7 @@
   </div>
 </section>
 
-<section class="blk">
+<section class="blk" id="case-quote">
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">案例</span>
@@ -169,7 +170,7 @@
   </div>
 </section>
 
-<section class="blk">
+<section class="blk ai-pricing-section" id="estimate">
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">費用</span>
@@ -178,10 +179,35 @@
     <ul class="plist">
       <li class="rv"><span><b>起價 NT$40,000</b>含抽取邏輯、比對規則、缺漏標記、計價邏輯、一種輸出格式。</span></li>
       <li class="rv"><span><b>費用會往上調整的項目</b>目錄整理、品項數量、分級折扣、專案價、多幣別，以及串接既有系統。</span></li>
-      <li class="rv"><span><b>可行性確認</b>可先用實際目錄與需求樣本測試品項辨識和比對結果，再決定正式開發範圍，費用可折抵開發款。</span></li>
+      <li class="rv"><span><b>可行性確認</b>可先用實際目錄與需求樣本測試品項辨識和比對結果；測試範圍與費用會先單獨列出，後續委託正式開發時可全額折抵。</span></li>
       <li class="rv"><span><b>API 費用另計</b>語言模型用量由你的帳號支付，依處理量計費。</span></li>
       <li class="rv"><span><b>上線後支援</b>驗收後提供 30 天保固，保固期滿後可按次處理，或選擇 NT$2,000/月起的基本維護；目錄更新與計價規則調整依實際範圍估算。</span></li>
     </ul>
+    <div class="ai-requirement-builder service-requirement-builder quote-requirement-builder rv" data-service="AI 報價與文件處理系統">
+      <fieldset class="ai-features">
+        <legend tabindex="-1">快速整理報價需求 <small>可複選</small></legend>
+        <p class="ai-features-help">這裡不計算價格，只把目前需要的處理步驟整理成詢問內容；正式範圍仍需查看目錄與需求樣本。</p>
+        <div class="ai-feature-grid">
+          <label><input type="checkbox" value="text" data-name="從自由文字擷取品項、數量與需求欄位"><span><b>文字需求擷取</b><small>從詢價信或現場描述整理必要欄位。</small></span></label>
+          <label><input type="checkbox" value="document" data-name="讀取 PDF、圖片或規格文件"><span><b>文件／圖片讀取</b><small>處理規格書、掃描文件或客戶上傳的圖片。</small></span></label>
+          <label><input type="checkbox" value="catalog" data-name="將需求對應到商品或供應商目錄"><span><b>目錄比對</b><small>處理品項名稱、別名、規格與供應商資料。</small></span></label>
+          <label><input type="checkbox" value="pricing" data-name="依固定規則計算價格、工時、稅與折扣"><span><b>規則計價</b><small>把可核對的價格與計算方式寫成固定邏輯。</small></span></label>
+          <label><input type="checkbox" value="missing" data-name="標記缺漏或無法對應的項目"><span><b>缺漏標記</b><small>找不到資料時留給人確認，不讓模型猜價格。</small></span></label>
+          <label><input type="checkbox" value="review" data-name="加入人工確認與核准流程"><span><b>人工確認</b><small>在送出報價前檢查品項、價格與例外情況。</small></span></label>
+          <label><input type="checkbox" value="output" data-name="輸出 PDF、Excel 或報價文件"><span><b>結果輸出</b><small>產生固定格式的報價單或可下載資料。</small></span></label>
+          <label><input type="checkbox" value="integration" data-name="透過 API 串接現有系統"><span><b>API／系統串接</b><small>把輸入或結果接到既有前端、訂單或內部系統。</small></span></label>
+        </div>
+        <label class="ai-requirement-note"><span>補充你的情況 <small>選填</small></span><textarea class="service-requirement-note" rows="3" placeholder="例如：目前有三家供應商 Excel 目錄，技師會用文字描述需求，希望最後產生 PDF 報價單。"></textarea></label>
+      </fieldset>
+      <aside class="ai-estimate-result" aria-live="polite">
+        <small>QUOTE REQUIREMENT</small><p>目前需求</p><h3 class="service-requirement-title">尚未選擇功能</h3>
+        <ul class="service-requirement-items"><li class="is-empty">從左側勾選處理步驟</li></ul>
+        <span>報價方式</span><strong class="ai-quote-method">查看資料後報價</strong>
+        <p class="ai-estimate-note">需要先確認目錄格式、品項數量、計價規則、輸入文件及輸出方式，再判斷辨識與比對範圍。</p>
+        <button class="ai-estimate-copy service-requirement-copy" type="button" disabled>複製需求內容 <b>→</b></button>
+        <span class="ai-estimate-status service-requirement-status" role="status"></span>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -211,17 +237,17 @@
 
 <section class="work-index">
   <div class="wrap">
-    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>不只這一個案例</h2></div><p>本頁只展開與這項服務最相關的內容；其他正式專案、原型與自有產品可從這裡查看。</p></div>
+    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>其他案例與產品</h2></div><p>本頁展開與這項服務最相關的內容；其餘正式專案、原型與自有產品可從這裡查看。</p></div>
     <div class="work-mini-grid">
-      <a class="work-mini" data-no="01" href="index.html?project=fulijie#projects"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
-      <a class="work-mini" data-no="02" href="index.html?project=quote#projects"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
-      <a class="work-mini" data-no="03" href="index.html?project=survey#projects"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
-      <a class="work-mini" data-no="04" href="index.html?project=aicreate#projects"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
+      <a class="work-mini" data-no="01" href="service-web.html#case-fulijie"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
+      <a class="work-mini" data-no="02" href="service-quote.html#case-quote"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
+      <a class="work-mini" data-no="03" href="service-form.html#case-survey"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
+      <a class="work-mini" data-no="04" href="https://aicreateaworld.com/" target="_blank" rel="noopener"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
     </div>
   </div>
 </section>
 
-<div class="contact-sec">
+<div class="contact-sec" id="contact">
   <div class="narrow">
     <div class="contact-box rv">
       <h2>你們現在怎麼報價？</h2>
@@ -239,8 +265,10 @@
 </div>
 </main>
 
-<footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
+<footer><span>陳冠名（Kuan-Ming Chen）· 台中 · <a href="privacy.html">隱私說明</a></span><a href="index.html">回首頁</a></footer>
 
+<script src="site-shell.js"></script>
 <script src="reveal.js"></script>
+<script src="service-requirements.js"></script>
 </body>
 </html>

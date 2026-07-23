@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="aicreate-icon.png">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="site-shell.css">
 <link rel="stylesheet" href="service-v2.css">
 <script type="application/ld+json">
 {
@@ -55,22 +55,23 @@
     <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
   </a>
   <nav>
+    <a href="service-web.html">網站製作</a>
     <a href="service-ai-kefu.html">AI 客服</a>
     <a href="service-n8n.html">流程自動化</a>
     <a href="service-form.html" aria-current="page">資料系統</a>
     <a href="service-quote.html">AI 報價</a>
-    <a href="why-not-diy.html">自己做？</a>
-    <a class="lang-switch" href="en/" lang="en" hreflang="en">EN</a>
+    <a href="why-not-diy.html">原型與上線</a>
+      <a class="lang-switch" href="en/index.html#service-data" lang="en" hreflang="en">EN</a>
   </nav>
-  <a class="mobile-lang-switch" href="en/" lang="en" hreflang="en" aria-label="English version">EN</a>
-  <a class="nav-talk" href="index.html#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
+    <a class="mobile-lang-switch" href="en/index.html#service-data" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="nav-talk" href="#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
 </header>
 
 <main id="detail-main">
 
 <div class="hero sub">
   <div class="narrow service-hero-layout">
-    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>服務項目 03</span>
+    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>服務項目 04</span>
       <h1 class="rv">表單 / 問卷 / <em>資料系統</em></h1>
       <span class="price-tag rv">起價 NT$50,000</span>
       <p class="lede rv">依填答者的身分與答案顯示不同題目，送出後的資料可直接查詢、篩選、匯出，省去逐份整理 Excel 的時間。</p>
@@ -149,7 +150,7 @@
   </div>
 </section>
 
-<section class="blk">
+<section class="blk" id="case-survey">
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">案例</span>
@@ -174,18 +175,66 @@
   </div>
 </section>
 
-<section class="blk tint">
+<section class="blk tint ai-pricing-section" id="estimate">
   <div class="narrow">
     <div class="sec-head rv">
-      <span class="sec-num">費用</span>
-      <h2>費用怎麼計算</h2>
+      <span class="sec-num">費用</span><h2>常見資料系統與訂製需求</h2>
+      <p>資料系統的費用取決於條件邏輯、權限、管理方式與既有資料。可先套用接近的類型，再調整實際需要的模組。</p>
     </div>
-    <ul class="plist">
-      <li class="rv"><span><b>起價 NT$50,000</b>適用於單一問卷與固定題目結構，含條件邏輯設計、資料結構、填答端、後台查詢與匯出，以及基本權限控管。</span></li>
-      <li class="rv"><span><b>費用會往上調整的項目</b>可自行建立問卷的管理後台、多公司與多人權限、問卷版本管理、複核流程、歷史資料匯入、複雜加權計算，以及串接既有系統。報價時會分項列出。</span></li>
-      <li class="rv"><span><b>可行性確認</b>可先用最複雜的一份實際問卷製作小範圍版本，確認條件邏輯與資料格式後再進入正式開發，費用可折抵開發款。</span></li>
+    <div class="ai-starting-grid rv" aria-label="資料系統常見類型">
+      <article class="ai-starting-card">
+        <small>COLLECTION</small><h3>引導式資料收集</h3><strong>NT$50,000 起</strong>
+        <p>適合單一問卷或申請流程，需要條件題目、驗證、後台查詢與資料匯出。</p>
+        <span>條件邏輯 · 填答端 · 資料結構 · 後台查詢 · 匯出 · 基本權限</span>
+        <button class="service-package-apply" type="button" data-package="引導式資料收集" data-preset="conditional,validation,database,search,export,permissions">套用這個套餐 <b>↓</b></button>
+      </article>
+      <article class="ai-starting-card">
+        <small>MANAGEMENT</small><h3>管理型資料系統</h3><strong>詢問報價</strong>
+        <p>適合需要多人操作、角色權限、資料複核、版本管理與管理後台的內部系統。</p>
+        <span>查詢管理 · 多角色權限 · 複核流程 · 版本紀錄 · 操作後台</span>
+        <button class="service-package-apply" type="button" data-package="管理型資料系統" data-preset="database,search,export,admin,permissions,versioning">套用這個套餐 <b>↓</b></button>
+      </article>
+      <article class="ai-starting-card custom">
+        <small>CUSTOM</small><h3>資料整合／既有系統</h3><strong>詢問報價</strong>
+        <p>需要匯入大量歷史資料、串接外部系統、報表工具或特殊計算規則時另外評估。</p>
+        <span>歷史資料 · API 串接 · 特殊計算 · 多公司／部門 · 報表整合</span>
+        <button class="service-package-apply" type="button" data-package="訂製資料系統">開始自行組合 <b>↓</b></button>
+      </article>
+    </div>
+
+    <div class="ai-requirement-builder service-requirement-builder rv" data-service="資料收集與管理系統">
+      <fieldset class="ai-features">
+        <legend tabindex="-1">訂製資料系統：勾選需要的模組 <small>可複選</small></legend>
+        <p class="ai-features-help">套用類型只會帶入常見模組，仍可自由增減。若有現成 Excel、表單或資料庫，可在補充欄說明。</p>
+        <div class="ai-feature-grid">
+          <label><input type="checkbox" value="conditional" data-name="依身分或答案顯示不同題目"><span><b>條件題目／分流</b><small>依角色、答案或階段顯示相關內容。</small></span></label>
+          <label><input type="checkbox" value="calculation" data-name="加入表格輸入與即時計算"><span><b>表格與計算</b><small>數字、選項、加總、加權或其他規則運算。</small></span></label>
+          <label><input type="checkbox" value="validation" data-name="送出前檢查必填與資料格式"><span><b>資料驗證</b><small>集中提示缺漏、格式錯誤與不合理內容。</small></span></label>
+          <label><input type="checkbox" value="links" data-name="產生免登入的一次性填答連結"><span><b>一次性連結</b><small>依公司、身分或案件產生專屬填答入口。</small></span></label>
+          <label><input type="checkbox" value="database" data-name="建立結構化資料庫"><span><b>資料庫設計</b><small>將填答或作業資料以可查詢的結構保存。</small></span></label>
+          <label><input type="checkbox" value="search" data-name="加入後台查詢、篩選與排序"><span><b>查詢與篩選</b><small>依日期、公司、狀態、分類或其他欄位查找。</small></span></label>
+          <label><input type="checkbox" value="export" data-name="匯出 CSV、Excel 或報表資料"><span><b>資料匯出</b><small>提供後續分析、備份或報表工具使用。</small></span></label>
+          <label><input type="checkbox" value="admin" data-name="加入可維護內容的管理後台"><span><b>管理後台</b><small>新增、修改、預覽與發布題目或系統內容。</small></span></label>
+          <label><input type="checkbox" value="permissions" data-name="設定使用者角色與操作權限"><span><b>角色與權限</b><small>限制不同人能查看、修改或審核的內容。</small></span></label>
+          <label><input type="checkbox" value="versioning" data-name="保留版本、複核與操作紀錄"><span><b>版本／複核紀錄</b><small>保留資料當下版本及後續審核歷程。</small></span></label>
+          <label><input type="checkbox" value="import" data-name="整理並匯入歷史資料"><span><b>歷史資料匯入</b><small>評估 Excel 或舊系統資料的格式與可匯入範圍。</small></span></label>
+          <label><input type="checkbox" value="integration" data-name="串接 API、報表或既有系統"><span><b>外部系統串接</b><small>和現有資料庫、Power BI 或其他平台交換資料。</small></span></label>
+        </div>
+        <label class="ai-requirement-note"><span>補充你的情況 <small>選填</small></span><textarea class="service-requirement-note" rows="3" placeholder="例如：目前使用 Excel 收集 5 間公司的年度資料，需要依部門分流並匯出給 Power BI。"></textarea></label>
+      </fieldset>
+      <aside class="ai-estimate-result" aria-live="polite">
+        <small>CUSTOM DATA SYSTEM</small><p>訂製需求</p><h3 class="service-requirement-title">尚未選擇功能</h3>
+        <ul class="service-requirement-items"><li class="is-empty">從左側勾選想要的模組</li></ul>
+        <span>報價方式</span><strong class="ai-quote-method">確認需求後報價</strong>
+        <p class="ai-estimate-note">我會先確認資料來源、欄位與條件邏輯、使用者權限、匯入範圍及外部串接，再整理正式報價。</p>
+        <button class="ai-estimate-copy service-requirement-copy" type="button" disabled>複製訂製需求 <b>→</b></button>
+        <span class="ai-estimate-status service-requirement-status" role="status"></span>
+      </aside>
+    </div>
+    <ul class="plist ai-price-notes">
+      <li class="rv"><span><b>可行性確認</b>可先用最複雜的一份表單或資料樣本製作小範圍版本；測試費用會先列出，後續委託正式開發時可折抵。</span></li>
       <li class="rv"><span><b>主機與資料庫費用另計</b>依資料量與流量，建議用你的名義申請，我協助設定。</span></li>
-      <li class="rv"><span><b>上線後支援</b>驗收後提供 30 天保固，保固期滿後可按次處理，或選擇 NT$2,000/月起的基本維護；完整系統的維護費依模組與使用規模另行估算。</span></li>
+      <li class="rv"><span><b>上線後支援</b>驗收後提供 30 天保固；保固期滿後可按次處理，或依模組與使用規模另訂維護方式。</span></li>
     </ul>
   </div>
 </section>
@@ -195,7 +244,7 @@
     <div class="sec-head rv">
       <span class="sec-num">委託前常問</span>
       <h2>客製化表單系統常見問題</h2>
-      <p>先確認現成工具卡在哪裡，再判斷是否值得另外開發。</p>
+      <p>評估時會確認現成工具的限制，以及另外開發能解決多少問題。</p>
     </div>
     <div class="answer-grid">
       <article class="answer-card rv">
@@ -216,17 +265,17 @@
 
 <section class="work-index">
   <div class="wrap">
-    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>不只這一個案例</h2></div><p>本頁只展開與這項服務最相關的內容；其他正式專案、原型與自有產品可從這裡查看。</p></div>
+    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>其他案例與產品</h2></div><p>本頁展開與這項服務最相關的內容；其餘正式專案、原型與自有產品可從這裡查看。</p></div>
     <div class="work-mini-grid">
-      <a class="work-mini" data-no="01" href="index.html?project=fulijie#projects"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
-      <a class="work-mini" data-no="02" href="index.html?project=quote#projects"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
-      <a class="work-mini" data-no="03" href="index.html?project=survey#projects"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
-      <a class="work-mini" data-no="04" href="index.html?project=aicreate#projects"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
+      <a class="work-mini" data-no="01" href="service-web.html#case-fulijie"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
+      <a class="work-mini" data-no="02" href="service-quote.html#case-quote"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
+      <a class="work-mini" data-no="03" href="service-form.html#case-survey"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
+      <a class="work-mini" data-no="04" href="https://aicreateaworld.com/" target="_blank" rel="noopener"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
     </div>
   </div>
 </section>
 
-<div class="contact-sec">
+<div class="contact-sec" id="contact">
   <div class="narrow">
     <div class="contact-box rv">
       <h2>你現在的表單長什麼樣？</h2>
@@ -244,8 +293,10 @@
 </div>
 </main>
 
-<footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
+<footer><span>陳冠名（Kuan-Ming Chen）· 台中 · <a href="privacy.html">隱私說明</a></span><a href="index.html">回首頁</a></footer>
 
+<script src="site-shell.js"></script>
 <script src="reveal.js"></script>
+<script src="service-requirements.js"></script>
 </body>
 </html>

@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>n8n 流程自動化建置｜API 串接與資料同步｜AI 創界</title>
-<meta name="description" content="n8n 流程自動化與系統串接，處理表單通知、資料同步、定期報表、API 與 Webhook。包含錯誤重試、失敗通知及文件，單一流程 NT$20,000 起。">
+<meta name="description" content="n8n 流程自動化與系統串接，處理訂單庫存、信件分類、客戶追蹤、資料同步、定期報表、API 與 Webhook。單一流程 NT$20,000 起。">
 <meta name="theme-color" content="#0d0f14">
 <link rel="canonical" href="https://service.aicreateaworld.com/service-n8n.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:site_name" content="AI 創界｜接案服務">
 <meta property="og:title" content="n8n 流程自動化建置｜API 串接與資料同步">
-<meta property="og:description" content="處理表單通知、資料同步、定期報表與系統串接。單一流程起價 NT$20,000。">
+<meta property="og:description" content="串接訂單庫存、信件、表單、報表與既有系統，減少重複輸入與人工查看。單一流程起價 NT$20,000。">
 <meta property="og:url" content="https://service.aicreateaworld.com/service-n8n.html">
 <meta property="og:image" content="https://service.aicreateaworld.com/og-preview.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="aicreate-icon.png">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="site-shell.css">
 <link rel="stylesheet" href="service-v2.css">
 <script type="application/ld+json">
 {
@@ -26,7 +26,7 @@
   "@id": "https://service.aicreateaworld.com/service-n8n.html#service",
   "name": "n8n 流程自動化",
   "url": "https://service.aicreateaworld.com/service-n8n.html",
-  "description": "使用 n8n 處理表單通知、資料同步、定期報表與系統串接，包含錯誤重試、失敗通知與交接文件。",
+  "description": "使用 n8n 處理訂單庫存、信件分類、表單通知、資料同步、定期報表與系統串接，包含錯誤重試、失敗通知與交接文件。",
   "provider": { "@id": "https://service.aicreateaworld.com/#organization" },
   "areaServed": { "@type": "Country", "name": "台灣" },
   "offers": {
@@ -55,26 +55,27 @@
     <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
   </a>
   <nav>
+    <a href="service-web.html">網站製作</a>
     <a href="service-ai-kefu.html">AI 客服</a>
     <a href="service-n8n.html" aria-current="page">流程自動化</a>
     <a href="service-form.html">資料系統</a>
     <a href="service-quote.html">AI 報價</a>
-    <a href="why-not-diy.html">自己做？</a>
-    <a class="lang-switch" href="en/" lang="en" hreflang="en">EN</a>
+    <a href="why-not-diy.html">原型與上線</a>
+      <a class="lang-switch" href="en/index.html#service-automation" lang="en" hreflang="en">EN</a>
   </nav>
-  <a class="mobile-lang-switch" href="en/" lang="en" hreflang="en" aria-label="English version">EN</a>
-  <a class="nav-talk" href="index.html#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
+    <a class="mobile-lang-switch" href="en/index.html#service-automation" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="nav-talk" href="#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
 </header>
 
 <main id="detail-main">
 
 <div class="hero sub">
   <div class="narrow service-hero-layout">
-    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>服務項目 02</span>
+    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>服務項目 03</span>
       <h1 class="rv">n8n <em>流程自動化</em></h1>
       <span class="price-tag rv">單一流程起價 NT$20,000</span>
       <p class="lede rv">表單送出後通知誰、資料要寫進哪裡、報表何時整理寄出，都可以照你原本的規則自動執行。流程出錯會先重試，仍未成功就通知你處理。</p>
-      <a class="cta rv" href="index.html#contact">免費諮詢</a>
+        <a class="cta rv" href="#contact">免費諮詢</a>
     </div>
     <div class="service-ui flow-ui rv" aria-hidden="true">
       <div class="canvas-head"><b>訂單通知流程</b><span><i></i>ACTIVE</span></div>
@@ -101,7 +102,52 @@
   </div>
 </section>
 
-<section class="blk tint">
+<section class="blk tint automation-directions">
+  <div class="narrow">
+    <div class="sec-head rv">
+      <span class="sec-num">常見應用方向</span>
+      <h2>不只通知，也能把前後步驟接起來</h2>
+      <p>下面是常見的自動化方向，不是固定套版。實際能做到哪些範圍，仍要看你目前使用的工具、資料格式與串接方式。</p>
+    </div>
+    <div class="two direction-grid">
+      <article class="panel rv">
+        <small class="direction-code">01 · ORDER / STOCK</small>
+        <h3>訂單與庫存</h3>
+        <p>訂單成立後同步資料、更新庫存、低於安全量時通知，並在每天結束時整理訂單紀錄。</p>
+      </article>
+      <article class="panel rv">
+        <small class="direction-code">02 · EMAIL / ADMIN</small>
+        <h3>信件與行政</h3>
+        <p>依寄件人或內容分類來信、擷取附件與重要欄位，再將需要處理的信件交給指定人員。</p>
+      </article>
+      <article class="panel rv">
+        <small class="direction-code">03 · LEAD / FOLLOW-UP</small>
+        <h3>表單與客戶追蹤</h3>
+        <p>詢價或報名資料送出後建立客戶紀錄、通知負責人，並依狀態安排後續提醒。</p>
+      </article>
+      <article class="panel rv">
+        <small class="direction-code">04 · DATA SYNC</small>
+        <h3>跨系統資料同步</h3>
+        <p>讓試算表、資料庫、CRM 或其他工具交換資料，減少重複輸入、下載再上傳的工作。</p>
+      </article>
+      <article class="panel rv">
+        <small class="direction-code">05 · REPORT / ALERT</small>
+        <h3>報表與提醒</h3>
+        <p>定期彙整營收、案件進度或異常資料，寄送報表，並在逾期或數值異常時主動提醒。</p>
+      </article>
+      <article class="panel rv">
+        <small class="direction-code">06 · FILE / CONTENT</small>
+        <h3>檔案與內容整理</h3>
+        <p>依規則命名、分類與歸檔檔案；需要理解文字時，再加入 AI 摘要、標籤或資料擷取。</p>
+      </article>
+    </div>
+    <div class="callout rv">
+      <b>關於即時更新：</b>若原系統提供 Webhook，可在事件發生時觸發；只有 API 或檔案匯出時，則依固定頻率同步。確認工具後才能判斷更新速度。
+    </div>
+  </div>
+</section>
+
+<section class="blk">
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">內容</span>
@@ -140,7 +186,7 @@
   </div>
 </section>
 
-<section class="blk">
+<section class="blk tint" id="automation-cases">
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">實績</span>
@@ -172,7 +218,7 @@
         </div>
         <span class="chip">實際營運中</span>
       </div>
-      <div class="pair"><span class="k">內容</span><p class="v">n8n 接收訊息、讀取對話狀態、呼叫模型並驗證回傳格式；處理失敗時走備援流程，無法確認答案時轉給真人。不同客戶的設定與知識庫分開保存。</p></div>
+      <div class="pair"><span class="k">內容</span><p class="v">n8n 接收訊息、讀取對話狀態、呼叫模型並驗證回傳格式；處理失敗時走備援流程。依個別需求保留紀錄、通知負責人，或回覆稍後處理；不同客戶的設定與知識庫分開保存。</p></div>
       <div class="pair"><span class="k">重點</span><p class="v">模型輸出會先經過格式驗證，格式不符時自動重試；仍未成功則保留紀錄並改走備援流程，避免單次異常中斷整段客服流程。</p></div>
       <div class="demo-row">
         <a class="dbtn" href="service-ai-kefu.html"><span>→</span> AI 客服細節</a>
@@ -181,7 +227,7 @@
   </div>
 </section>
 
-<section class="blk tint">
+<section class="blk">
   <div class="narrow">
     <div class="sec-head rv">
       <span class="sec-num">費用</span>
@@ -201,7 +247,7 @@
     <div class="sec-head rv">
       <span class="sec-num">委託前常問</span>
       <h2>n8n 流程自動化常見問題</h2>
-      <p>不是每段工作都該自動化，先看規則、資料與例外是否足夠明確。</p>
+      <p>適合自動化的工作，需要有明確規則、可取得的資料，以及可以預先定義的例外處理方式。</p>
     </div>
     <div class="answer-grid">
       <article class="answer-card rv">
@@ -222,17 +268,17 @@
 
 <section class="work-index">
   <div class="wrap">
-    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>不只這一個案例</h2></div><p>本頁只展開與這項服務最相關的內容；其他正式專案、原型與自有產品可從這裡查看。</p></div>
+    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>其他案例與產品</h2></div><p>本頁展開與這項服務最相關的內容；其餘正式專案、原型與自有產品可從這裡查看。</p></div>
     <div class="work-mini-grid">
-      <a class="work-mini" data-no="01" href="index.html?project=fulijie#projects"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
-      <a class="work-mini" data-no="02" href="index.html?project=quote#projects"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
-      <a class="work-mini" data-no="03" href="index.html?project=survey#projects"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
-      <a class="work-mini" data-no="04" href="index.html?project=aicreate#projects"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
+      <a class="work-mini" data-no="01" href="service-web.html#case-fulijie"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
+      <a class="work-mini" data-no="02" href="service-quote.html#case-quote"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
+      <a class="work-mini" data-no="03" href="service-form.html#case-survey"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
+      <a class="work-mini" data-no="04" href="https://aicreateaworld.com/" target="_blank" rel="noopener"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
     </div>
   </div>
 </section>
 
-<div class="contact-sec">
+<div class="contact-sec" id="contact">
   <div class="narrow">
     <div class="contact-box rv">
       <h2>哪一段工作最常重複？</h2>
@@ -250,8 +296,9 @@
 </div>
 </main>
 
-<footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
+<footer><span>陳冠名（Kuan-Ming Chen）· 台中 · <a href="privacy.html">隱私說明</a></span><a href="index.html">回首頁</a></footer>
 
+<script src="site-shell.js"></script>
 <script src="reveal.js"></script>
 </body>
 </html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 系統自己做或委託開發？部署、維護與成本比較｜AI 創界</title>
-<meta name="description" content="AI 系統適合自己做還是委託開發？從需求、權限、部署、監控、資料與維護責任比較，判斷小工具、原型與正式營運系統的差異。">
+<title>AI 原型與正式上線差在哪？｜AI 創界</title>
+<meta name="description" content="AI 可以快速做出功能原型；正式上線還需要需求整理、測試、部署與後續維護。比較自己做小工具、先做原型與規劃正式系統的差異。">
 <meta name="theme-color" content="#0d0f14">
 <link rel="canonical" href="https://service.aicreateaworld.com/why-not-diy.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:site_name" content="AI 創界｜接案服務">
-<meta property="og:title" content="AI 系統自己做或委託開發？部署、維護與成本比較">
-<meta property="og:description" content="哪些工具適合自己用 AI 製作，哪些系統還需要規劃權限、部署、監控與維護。">
+<meta property="og:title" content="AI 原型與正式上線差在哪？">
+<meta property="og:description" content="AI 能做出功能，真正的差別是誰負責整理需求、完成測試並讓系統穩定上線。">
 <meta property="og:url" content="https://service.aicreateaworld.com/why-not-diy.html">
 <meta property="og:image" content="https://service.aicreateaworld.com/og-preview.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="aicreate-icon.png">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="site-shell.css">
 <link rel="stylesheet" href="service-v2.css">
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
@@ -37,171 +37,148 @@
     <span><b>AI 創界</b><small>AI CREATE A WORLD</small></span>
   </a>
   <nav>
+    <a href="service-web.html">網站製作</a>
     <a href="service-ai-kefu.html">AI 客服</a>
     <a href="service-n8n.html">流程自動化</a>
     <a href="service-form.html">資料系統</a>
     <a href="service-quote.html">AI 報價</a>
-    <a href="why-not-diy.html" aria-current="page">自己做？</a>
-    <a class="lang-switch" href="en/" lang="en" hreflang="en">EN</a>
+    <a href="why-not-diy.html" aria-current="page">原型與上線</a>
+    <a class="lang-switch" href="en/index.html#process" lang="en" hreflang="en">EN</a>
   </nav>
-  <a class="mobile-lang-switch" href="en/" lang="en" hreflang="en" aria-label="English version">EN</a>
-  <a class="nav-talk" href="index.html#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
+  <a class="mobile-lang-switch" href="en/index.html#process" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="nav-talk" href="#contact"><span>台中 · 遠端服務</span>聊聊需求 <b>↗</b></a>
 </header>
 
 <main id="detail-main">
 
 <div class="hero sub">
   <div class="narrow service-hero-layout">
-    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>常被問到的問題</span>
-      <h1 class="rv">那我自己<em>叫 AI 做</em>就好了？</h1>
-      <p class="lede rv">小工具或原型很適合用 AI 自己做；若系統會直接服務客戶或影響營運，還要處理需求、權限、部署、監控與維護。</p>
+    <div class="service-hero-copy"><span class="eyebrow rv"><i></i>AI 協作開發的真正差別</span>
+      <h1 class="rv">AI 能做出功能，<em>誰負責讓它穩定運作？</em></h1>
+      <p class="lede rv">我也會使用 AI 協助開發。你委託的不是逐行手寫程式，而是有人把需求、測試、上線與後續處理接起來，並對交付結果負責。</p>
     </div>
     <div class="service-ui build-ui rv" aria-hidden="true">
-      <div class="build-side prototype"><small>AI 原型</small><b>功能能跑</b><span>畫面完成</span><span>基本流程</span><span>單次測試</span></div>
+      <div class="build-side prototype"><small>AI 原型</small><b>功能看得到</b><span>主要畫面</span><span>基本流程</span><span>測試資料</span></div>
       <i class="build-arrow">→</i>
-      <div class="build-side production"><small>正式系統</small><b>能穩定營運</b><span>權限與例外</span><span>部署與監控</span><span>維護與交接</span></div>
-      <div class="build-footer">能跑只是開始，能維護才是交付</div>
+      <div class="build-side production"><small>正式上線</small><b>可以放心交付</b><span>真實使用者</span><span>異常也有處理方式</span><span>後續有人維護</span></div>
+      <div class="build-footer">原型驗證想法；正式系統承接日常營運</div>
     </div>
   </div>
 </div>
 
-<section class="blk">
+<section class="blk diy-compare-section">
   <div class="narrow">
     <div class="sec-head rv">
-      <span class="sec-num">前提</span>
-      <h2>AI 真的會寫程式</h2>
-      <p>AI 可以協助製作表單、資料整理程式或 API 串接，我在開發工作中也會使用。</p>
+      <span class="sec-num">核心差別</span>
+      <h2>能跑，和能交付是兩件事</h2>
+      <p>原型的任務是證明想法可行；正式系統則要面對真實使用者、真實資料與每天可能發生的變化。</p>
     </div>
-    <div class="callout rv">
-      真正需要評估的是：<b>怎麼驗證結果、怎麼上線，以及發生異常時由誰處理。</b>
+    <div class="delivery-compare rv">
+      <article>
+        <small>PROTOTYPE</small>
+        <h3>AI 原型</h3>
+        <p>快速做出主要畫面與流程，用測試資料確認方向是否值得繼續投入。</p>
+        <ul>
+          <li>證明主要功能可以運作</li>
+          <li>適合內部試用與需求討論</li>
+          <li>可以容許手動調整或重新執行</li>
+        </ul>
+      </article>
+      <article class="is-production">
+        <small>PRODUCTION</small>
+        <h3>正式營運系統</h3>
+        <p>不只完成主要功能，也要讓不熟悉技術的人能使用，並在出錯時知道接下來怎麼處理。</p>
+        <ul>
+          <li>使用真實資料與正式帳號</li>
+          <li>正常、缺資料與失敗情況都能處理</li>
+          <li>更新、維護與責任範圍有明確安排</li>
+        </ul>
+      </article>
     </div>
+    <div class="callout rv"><b>差別不在程式是不是由 AI 產生，</b>而在上線前有沒有人確認它符合實際流程，上線後又由誰對結果負責。</div>
   </div>
 </section>
 
-<section class="blk tint">
+<section class="blk tint diy-delivery-section">
   <div class="narrow">
     <div class="sec-head rv">
-      <span class="sec-num">差別一</span>
-      <h2>需求不只是一句功能描述</h2>
-      <p>以 LINE AI 客服為例，「可以回答問題」只是其中一部分。</p>
+      <span class="sec-num">你委託的是</span>
+      <h2>由我把事情接到上線</h2>
+      <p>你不需要先學會所有技術名詞。我的工作是把你的營運方式整理成系統能執行、能測試，也能交付的範圍。</p>
     </div>
-    <p class="rv" style="margin-bottom:22px">開始製作前，至少要先確認以下事項：</p>
-    <ul class="plist">
-      <li class="rv"><span>知識庫從哪來？誰維護？價格改了誰去改？</span></li>
-      <li class="rv"><span>答不出來的時候要怎麼辦？硬答、說不知道、還是轉真人？轉給誰？</span></li>
-      <li class="rv"><span>要不要記住上一句？記多久？隔天客人再來，算同一段對話嗎？</span></li>
-      <li class="rv"><span>同時十個人在問，狀態會不會互相蓋掉？</span></li>
-      <li class="rv"><span>對話要不要留紀錄？留多久？誰能看？客人的個資怎麼處理？</span></li>
-      <li class="rv"><span>模型呼叫要花錢，用量爆掉的時候誰擋？上限設多少？</span></li>
-      <li class="rv"><span>客人傳一張你根本沒賣的東西的照片，機器人該說什麼？</span></li>
-    </ul>
-    <div class="callout rv" style="margin-top:24px">
-      AI 可以協助列出與實作這些項目，但答案仍取決於你的業務流程、風險承受程度與維護方式。
+    <div class="diy-responsibility-grid">
+      <article class="rv"><span>01</span><h3>整理需求</h3><p>把口頭想法、現有資料與真正要改善的工作整理成清楚範圍。</p></article>
+      <article class="rv"><span>02</span><h3>設計流程</h3><p>確認使用者怎麼操作，以及資料不足、無法判斷或執行失敗時的處理方式。</p></article>
+      <article class="rv"><span>03</span><h3>建置與串接</h3><p>完成畫面、功能與已確認的外部服務串接，避免各部分各自運作卻接不起來。</p></article>
+      <article class="rv"><span>04</span><h3>測試與修正</h3><p>用實際情境檢查流程，處理測試中發現的缺漏與不合理結果。</p></article>
+      <article class="rv"><span>05</span><h3>部署與交付</h3><p>完成上線設定，整理必要的操作方式，讓系統不只停留在我的電腦裡。</p></article>
+      <article class="rv"><span>06</span><h3>保固與維護</h3><p>事前說明保固、後續修改與第三方費用，問題發生時知道由誰處理。</p></article>
     </div>
+    <div class="callout rv"><b>我會使用 AI 加快開發，</b>但不會把尚未確認、沒有測試或超出能力範圍的功能直接答應並交付。</div>
   </div>
 </section>
 
-<section class="blk">
+<section class="blk diy-route-section">
   <div class="narrow">
     <div class="sec-head rv">
-      <span class="sec-num">差別二</span>
-      <h2>上線前容易漏掉的問題</h2>
-      <p>以下幾項不一定出現在主要功能中，卻會直接影響系統是否穩定。</p>
+      <span class="sec-num">怎麼選</span>
+      <h2>先決定現在需要哪個階段</h2>
+      <p>不是每個想法都要直接做成正式系統。先看使用者、資料與故障影響，再選擇適合的投入方式。</p>
     </div>
-    <ul class="plist">
-      <li class="rv"><span><b>Webhook 可能逾時或重送</b>若收到訊息後才開始耗時處理，平台可能判定失敗並再次傳送。流程需要快速回應，並避免同一事件被重複處理。</span></li>
-      <li class="rv"><span><b>模型輸出格式不一定固定</b>即使提示詞相同，回傳內容仍可能缺少欄位或格式錯誤，因此要驗證、重試並準備備援處理。</span></li>
-      <li class="rv"><span><b>API 金鑰不能放在前端</b>前端程式會被使用者下載，放在其中的金鑰可能遭到取用，造成資料或費用風險。</span></li>
-      <li class="rv"><span><b>連續訊息可能同時處理</b>多個程序同時更新同一段對話時，可能互相覆蓋狀態，需要排序、鎖定或去重。</span></li>
-      <li class="rv"><span><b>第三方服務會調整規格</b>API、權限或回傳格式變更後，既有串接可能需要更新，因此要保留錯誤紀錄與通知機制。</span></li>
-      <li class="rv"><span><b>資料結構需要預留變更方式</b>新增欄位或調整流程時，既有資料可能需要轉換；設計階段應先決定版本與遷移方式。</span></li>
-    </ul>
-    <div class="callout rv" style="margin-top:24px">
-      這些問題都能處理，重點是上線前納入設計，並在發生時留下足以判斷原因的紀錄。
+    <div class="diy-route-grid">
+      <article class="rv">
+        <small>ROUTE 01</small><h3>自己做小工具</h3>
+        <p>適合只有自己使用、不處理客戶敏感資料，而且失敗時不會影響營業的工作。</p>
+        <b>目標：省下一段自己的時間</b>
+      </article>
+      <article class="rv">
+        <small>ROUTE 02</small><h3>先做需求原型</h3>
+        <p>適合方向還不確定，想先操作主要流程、收集意見，再判斷是否值得正式投入。</p>
+        <b>目標：用較小成本確認方向</b>
+      </article>
+      <article class="rv is-production">
+        <small>ROUTE 03</small><h3>規劃正式系統</h3>
+        <p>適合會直接服務客戶、處理正式資料、影響日常營運，或預計長期使用與增加功能的需求。</p>
+        <b>目標：交付一套能持續使用的系統</b>
+      </article>
     </div>
-  </div>
-</section>
-
-<section class="blk tint">
-  <div class="narrow">
-    <div class="sec-head rv">
-      <span class="sec-num">差別三</span>
-      <h2>程式碼只是其中一塊</h2>
-      <p>程式完成後，仍要準備執行環境與日常維護方式。</p>
-    </div>
-    <div class="two">
-      <div class="panel rv"><h3>部署與網域</h3><p>程式要放在哪台主機、怎麼上去、憑證怎麼弄、掛掉會不會自己重啟。</p></div>
-      <div class="panel rv"><h3>金鑰與權限</h3><p>各種服務的金鑰放哪、誰能看、外洩了怎麼換。</p></div>
-      <div class="panel rv"><h3>資料庫</h3><p>資料如何保存、多久備份一次，以及是否定期測試還原。</p></div>
-      <div class="panel rv"><h3>監控</h3><p>系統壞了誰知道、怎麼知道、去哪看紀錄查原因。</p></div>
-      <div class="panel rv"><h3>成本控制</h3><p>模型、主機與第三方服務如何計費，哪些項目需要設定預算或用量上限。</p></div>
-      <div class="panel rv"><h3>交接文件</h3><p>記錄系統架構、設定位置與操作方式，讓日後接手的人能繼續維護。</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="blk">
-  <div class="narrow">
-    <div class="sec-head rv">
-      <span class="sec-num">差別四</span>
-      <h2>維護責任要先確認</h2>
-    </div>
-    <p class="rv" style="margin-bottom:16px">系統可能遇到連線失敗、服務改版、用量增加或資料異常。無論自行製作或委託開發，都應先決定誰負責接收通知、排查與修復。</p>
-    <p class="rv" style="margin-bottom:16px">自己製作的優點是成本低、修改自由，但也需要自行保留版本、設定與處理紀錄，否則隔一段時間後很難回想當初的設計。</p>
-    <p class="rv">委託開發時則要確認合約是否包含保固或持續維護；只有明確約定責任範圍，問題發生時才知道由誰處理。</p>
-  </div>
-</section>
-
-<section class="blk tint">
-  <div class="narrow">
-    <div class="sec-head rv">
-      <span class="sec-num">所以</span>
-      <h2>什麼情況下你真的該自己做</h2>
-      <p>不是每件事都該外包。</p>
-    </div>
-    <ul class="plist">
-      <li class="rv"><span><b>只有你自己使用的小工具</b>例如整理檔案、執行一次性統計或製作試算表；即使失敗也容易重新執行。</span></li>
-      <li class="rv"><span><b>目的是學習</b>願意花時間測試、查資料並自行維護，製作過程本身就是收穫。</span></li>
-      <li class="rv"><span><b>仍在驗證需求</b>不確定流程是否會長期使用時，可先製作簡單原型，確認確實有用再投入正式開發。</span></li>
-    </ul>
-    <div class="callout rv" style="margin-top:24px">
-      <b>適合找人協助的情況：</b>系統會直接提供給客戶使用、故障會影響營運、需要處理敏感資料，或預計長期增加功能。這些需求除了開發，也要一併規劃測試、權限與維護。
-    </div>
+    <div class="callout rv"><b>你不需要先替自己選好方案。</b>說明誰會使用、目前怎麼處理，以及最怕哪裡出錯，我會先判斷適合做小工具、需求原型或正式系統。</div>
   </div>
 </section>
 
 <section class="work-index">
   <div class="wrap">
-    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>實際做過的系統</h2></div><p>從客戶正式營運專案、需求原型到自有產品，查看我如何把 AI 協作轉成能使用與維護的成果。</p></div>
+    <div class="work-index-head"><div><span>ALL PROJECTS · 04</span><h2>從原型走到能使用的成果</h2></div><p>正式營運專案、需求原型與自有產品處在不同階段，也分別說明目前真正完成到哪裡。</p></div>
     <div class="work-mini-grid">
-      <a class="work-mini" data-no="01" href="index.html?project=fulijie#projects"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
-      <a class="work-mini" data-no="02" href="index.html?project=quote#projects"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
-      <a class="work-mini" data-no="03" href="index.html?project=survey#projects"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
-      <a class="work-mini" data-no="04" href="index.html?project=aicreate#projects"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
+      <a class="work-mini" data-no="01" href="service-web.html#case-fulijie"><small>正式商業案例</small><b>富立傑木作裝修</b><span>官網 · SEO · AI 諮詢 · 維運</span></a>
+      <a class="work-mini" data-no="02" href="service-quote.html#case-quote"><small>海外客戶專案</small><b>AI 報價助手</b><span>需求抽取 · 目錄比對 · 計價</span></a>
+      <a class="work-mini" data-no="03" href="service-form.html#case-survey"><small>客戶需求原型</small><b>引導式問卷系統</b><span>條件題目 · 管理 · 資料匯出</span></a>
+      <a class="work-mini" data-no="04" href="https://aicreateaworld.com/" target="_blank" rel="noopener"><small>自有產品</small><b>AI 創界</b><span>獨立開發 · 上線 · 持續營運</span></a>
     </div>
   </div>
 </section>
 
-<div class="contact-sec">
+<div class="contact-sec" id="contact">
   <div class="narrow">
     <div class="contact-box rv">
-      <h2>不確定你的狀況算哪一種？</h2>
-      <p>說明使用者、資料類型與故障可能造成的影響，我會協助判斷適合自行製作、先做原型，或直接規劃正式系統。</p>
+      <h2>先說明你想改善的工作。</h2>
+      <p>告訴我誰會使用、目前怎麼處理，以及最怕哪裡出錯。我會先整理適合驗證的範圍，再確認需要原型還是正式系統。</p>
       <div class="cta-pair">
         <a class="cta-line" href="https://line.me/ti/p/~0989285996">加 LINE 聊聊</a>
         <a class="cta" href="mailto:zxc02621948@gmail.com?subject=%E8%A9%A2%E5%95%8F">寄信給我</a>
       </div>
       <div class="links">
         <a href="index.html">回首頁</a>
-        <a href="index.html#contact">看服務項目</a>
+        <a href="index.html#systems">看服務項目</a>
       </div>
     </div>
   </div>
 </div>
 </main>
 
-<footer>陳冠名（Kuan-Ming Chen）· 台中 · <a href="index.html">回首頁</a></footer>
+<footer><span>陳冠名（Kuan-Ming Chen）· 台中 · <a href="privacy.html">隱私說明</a></span><a href="index.html">回首頁</a></footer>
 
+<script src="site-shell.js"></script>
 <script src="reveal.js"></script>
 </body>
 </html>
