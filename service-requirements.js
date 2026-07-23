@@ -5,11 +5,44 @@ document.querySelectorAll('.service-requirement-builder').forEach(builder => {
   const note = builder.querySelector('.service-requirement-note');
   const copyButton = builder.querySelector('.service-requirement-copy');
   const status = builder.querySelector('.service-requirement-status');
+  const result = builder.querySelector('.ai-estimate-result');
   const serviceName = builder.dataset.service || '訂製系統';
 
   if (!features.length || !title || !items) return;
 
+  const mobileSummary = document.createElement('button');
+  const mobileSummaryCount = document.createElement('span');
+  const mobileSummaryAction = document.createElement('b');
+  const resultId = result?.id || `requirement-summary-${Math.random().toString(36).slice(2, 9)}`;
+  let builderVisible = false;
+  let resultVisible = false;
+
+  if (result) {
+    result.id = resultId;
+    result.tabIndex = -1;
+    mobileSummary.type = 'button';
+    mobileSummary.className = 'service-requirement-mobile-summary';
+    mobileSummary.setAttribute('aria-controls', resultId);
+    mobileSummaryCount.textContent = '尚未選擇功能';
+    mobileSummaryAction.textContent = '查看需求摘要 ↓';
+    mobileSummary.append(mobileSummaryCount, mobileSummaryAction);
+    builder.append(mobileSummary);
+
+    mobileSummary.addEventListener('click', () => {
+      result.scrollIntoView({
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      window.setTimeout(() => result.focus({ preventScroll: true }), 450);
+    });
+  }
+
   const selectedFeatures = () => features.filter(input => input.checked);
+  const syncMobileSummary = selected => {
+    if (!result) return;
+    mobileSummaryCount.textContent = selected.length ? `已選 ${selected.length} 項功能` : '尚未選擇功能';
+    mobileSummary.classList.toggle('is-visible', selected.length > 0 && builderVisible && !resultVisible);
+  };
 
   const render = message => {
     const selected = selectedFeatures();
@@ -33,7 +66,22 @@ document.querySelectorAll('.service-requirement-builder').forEach(builder => {
     }
 
     if (status) status.textContent = message || '';
+    syncMobileSummary(selected);
   };
+
+  if (result && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      builderVisible = entry.isIntersecting;
+      syncMobileSummary(selectedFeatures());
+    }).observe(builder);
+
+    new IntersectionObserver(([entry]) => {
+      resultVisible = entry.isIntersecting;
+      syncMobileSummary(selectedFeatures());
+    }, { threshold: .15 }).observe(result);
+  } else {
+    builderVisible = true;
+  }
 
   features.forEach(input => input.addEventListener('change', () => render()));
   note?.addEventListener('input', () => { if (status) status.textContent = ''; });

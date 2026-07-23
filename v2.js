@@ -98,6 +98,7 @@ const serviceDemoLink = document.querySelector('#serviceDemoLink');
 const serviceLink = document.querySelector('#serviceLink');
 const serviceProofNote = document.querySelector('#serviceProofNote');
 const servicePanel = document.querySelector('#servicePanel');
+const compactServiceView = matchMedia('(max-width: 760px)');
 let currentService = 'web';
 
 function selectService(key) {
@@ -124,9 +125,32 @@ function selectService(key) {
   serviceProofNote.textContent = data.proofNote || '';
 }
 
+function syncServiceNavigationMode() {
+  serviceNodes.forEach(node => {
+    const isActive = node.dataset.service === currentService;
+    node.setAttribute('role', compactServiceView.matches ? 'link' : 'tab');
+    node.tabIndex = compactServiceView.matches || isActive ? 0 : -1;
+    if (compactServiceView.matches) {
+      node.removeAttribute('aria-selected');
+      node.removeAttribute('aria-controls');
+    } else {
+      node.setAttribute('aria-selected', String(isActive));
+      node.setAttribute('aria-controls', servicePanel.id);
+    }
+  });
+}
+
 serviceNodes.forEach((node, index) => {
-  node.addEventListener('click', () => selectService(node.dataset.service));
+  node.addEventListener('click', () => {
+    const key = node.dataset.service;
+    if (compactServiceView.matches && serviceData[key]?.detailLink) {
+      location.href = serviceData[key].detailLink;
+      return;
+    }
+    selectService(key);
+  });
   node.addEventListener('keydown', event => {
+    if (compactServiceView.matches) return;
     if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
     let next = index;
@@ -138,6 +162,9 @@ serviceNodes.forEach((node, index) => {
     selectService(serviceNodes[next].dataset.service);
   });
 });
+
+syncServiceNavigationMode();
+compactServiceView.addEventListener('change', syncServiceNavigationMode);
 
 const projectNodes = [...document.querySelectorAll('.project-node')];
 const projectFields = {
